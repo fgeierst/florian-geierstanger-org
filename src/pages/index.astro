@@ -1,16 +1,27 @@
 ---
+const siteTitle = 'Florian Geierstanger';
+const pageTitle = 'Blog';
+import Nav from '../components/Nav.astro'
 ---
 <html lang="en">
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Welcome to Astro</title>
+	<title>{pageTitle} — {siteTitle}</title>
+	<link rel="stylesheet" href="{Astro.resolve('../styles/style.css')}">
 </head>
 
 <body>
-	<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+	<Nav />
+	<h1 class="page-title">{pageTitle}</h1>
 </body>
 
 </html>
+
+<style lang="scss">
+  .site-title {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+</style>
