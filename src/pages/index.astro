@@ -1,27 +1,20 @@
 ---
-const siteTitle = 'Florian Geierstanger';
-const pageTitle = 'Blog';
-import Nav from '../components/Nav.astro'
+let title = "Blog";
+import BaseLayout from '../layouts/Base.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+// const title = 'Blog';
+
+interface MarkdownFrontmatter {
+  publishDate: number;
+}
+
+let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
 ---
-<html lang="en">
+<BaseLayout title="{title}">
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>{pageTitle} — {siteTitle}</title>
-	<link rel="stylesheet" href="{Astro.resolve('../styles/style.css')}">
-</head>
-
-<body>
-	<Nav />
-	<h1 class="page-title">{pageTitle}</h1>
-</body>
-
-</html>
-
-<style lang="scss">
-  .site-title {
-    font-size: inherit;
-    font-weight: inherit;
-  }
-</style>
+	<main class="main">
+		{allPosts.map(p => <BlogPostPreview post={p} />)}
+	</main>
+</BaseLayout>

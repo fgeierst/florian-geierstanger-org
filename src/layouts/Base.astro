@@ -1,0 +1,49 @@
+---
+import Nav from '../components/Nav.astro'
+
+let {title, content} = Astro.props;
+
+const siteTitle = 'Florian Geierstanger';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{title} — {siteTitle}</title>
+	<link rel="stylesheet" href="{Astro.resolve('../styles/style.css')}">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="nav">
+			<Nav />
+		</nav>
+		<main class="main">
+			<h1 class="page-title">{title}</h1>
+			<slot />
+		</main>
+	</div>
+</body>
+
+</html>
+
+<style lang="scss">
+  .site-title {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 70ch) 1fr;
+
+    & > * {
+      grid-column: 2/-2;
+    }
+
+    & > .nav {
+      grid-column: 1/-1;
+    }
+  }
+</style>
