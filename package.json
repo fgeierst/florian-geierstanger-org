@@ -22,5 +22,8 @@
     "rules": {
       "order/properties-alphabetical-order": true
     }
+  },
+  "dependencies": {
+    "@snowpack/plugin-postcss": "^1.4.3"
   }
 }
