@@ -3,7 +3,8 @@ const path = Astro.request.url.pathname;
 const navItems = [
   { 
     id: '/',
-    title: 'Florian Geierstanger'
+    title: 'Florian Geierstanger',
+    additionalStyles: 'nav__item--site-title'
   },
   { 
     id: '/filmvermittlung',
@@ -37,7 +38,7 @@ const navItems = [
 ---
 <ul class="nav">
 		{navItems.map((item) => (
-			<li class={`nav__item ${path == item.id ? "nav__item--active" : ""}`}>
+			<li class={`nav__item ${path == item.id ? "nav__item--active" : ""} ${item.additionalStyles}`}>
 				<a class="nav__link" href={`${item.id}`}>
 					{item.title}
 				</a>
