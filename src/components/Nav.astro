@@ -1,12 +1,33 @@
+---
+const navItems = [
+  { 
+    id: '/',
+    title: 'Florian Geierstanger'
+  },
+  { 
+    id: '/filmvermittlung',
+    title: 'Filmvermittlung'
+  },
+];
+const path = Astro.request.url.pathname;
+---
 <ul class="nav">
-  <li class="nav__item nav__item--site-title"><a class="nav__link" href="/">Florian Geierstanger</a></li>
-  <li class="nav__item "><a class="nav__link" href="/filmvermittlung">Filmvermittlung</a></li>
-  <li class="nav__item "><a class="nav__link" href="/filme">Filme</a></li>
+
+		{navItems.map((item) => (
+			<li class={`nav__item ${path == item.id ? "nav__item--active" : ""}`}>
+				<a class="nav__link" href={`${item.id}`}>
+					{item.title}
+				</a>
+			</li>
+		))}
+
+
+  <!-- <li class="nav__item "><a class="nav__link" href="/filme">Filme</a></li>
   <li class="nav__item "><a class="nav__link" href="/filmprogramme">Kurator</a></li>
   <li class="nav__item "><a class="nav__link" href="/biografie">Biografie</a></li>
   <li class="nav__item"><a class="nav__link" href="/archiv">Archiv</a></li>
   <li class="nav__item "><a class="nav__link" href="/notes/">Notes</a></li>
-  <li class="nav__item "><a class="nav__link" href="/kontakt">Kontakt</a></li>
+  <li class="nav__item "><a class="nav__link" href="/kontakt">Kontakt</a></li>  -->
 </ul>
 
 
@@ -14,15 +35,15 @@
   .nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 2rem;
+    gap: 0.5rem 2rem;
     list-style: none;
     margin-block-end: 2rem;
     margin-block-start: 0;
     padding-inline-start: 0;
 
     &__item {
-      &--active {
-        font-style: italic;
+      &--active a {
+        text-decoration: underline;
       }
 
       &--site-title {
