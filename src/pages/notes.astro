@@ -1,7 +1,7 @@
 ---
 let title = "Notes";
 import BaseLayout from '../layouts/Base.astro';
-import BlogPostPreview from '../components/BlogPostPreview.astro';
+import NotesItem from '../components/NotesItem.astro';
 interface MarkdownFrontmatter {
   publishDate: number;
 }
@@ -11,7 +11,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 ---
 <BaseLayout title="{title}">
 
-	<main class="main">
-		{allPosts.map(p => <BlogPostPreview post={p} />)}
-	</main>
+	<ul>
+		{allPosts.map(post => <NotesItem post={post} />)}
+	</ul>
 </BaseLayout>
