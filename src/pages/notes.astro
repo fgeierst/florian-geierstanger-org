@@ -1,0 +1,17 @@
+---
+let title = "Notes";
+import BaseLayout from '../layouts/Base.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+interface MarkdownFrontmatter {
+  publishDate: number;
+}
+
+let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./notes/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+---
+<BaseLayout title="{title}">
+
+	<main class="main">
+		{allPosts.map(p => <BlogPostPreview post={p} />)}
+	</main>
+</BaseLayout>
