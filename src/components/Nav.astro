@@ -1,4 +1,5 @@
 ---
+const path = Astro.request.url.pathname;
 const navItems = [
   { 
     id: '/',
@@ -8,11 +9,33 @@ const navItems = [
     id: '/filmvermittlung',
     title: 'Filmvermittlung'
   },
+  { 
+    id: '/filme',
+    title: 'Filme'
+  },
+  { 
+    id: '/filmprogramme',
+    title: 'Kurator'
+  },
+  { 
+    id: '/biografie',
+    title: 'Biografie'
+  },
+  { 
+    id: '/archiv',
+    title: 'Archiv'
+  },
+  { 
+    id: '/notes',
+    title: 'Notes'
+  },
+  { 
+    id: '/kontakt',
+    title: 'Kontakt'
+  },
 ];
-const path = Astro.request.url.pathname;
 ---
 <ul class="nav">
-
 		{navItems.map((item) => (
 			<li class={`nav__item ${path == item.id ? "nav__item--active" : ""}`}>
 				<a class="nav__link" href={`${item.id}`}>
@@ -20,16 +43,7 @@ const path = Astro.request.url.pathname;
 				</a>
 			</li>
 		))}
-
-
-  <!-- <li class="nav__item "><a class="nav__link" href="/filme">Filme</a></li>
-  <li class="nav__item "><a class="nav__link" href="/filmprogramme">Kurator</a></li>
-  <li class="nav__item "><a class="nav__link" href="/biografie">Biografie</a></li>
-  <li class="nav__item"><a class="nav__link" href="/archiv">Archiv</a></li>
-  <li class="nav__item "><a class="nav__link" href="/notes/">Notes</a></li>
-  <li class="nav__item "><a class="nav__link" href="/kontakt">Kontakt</a></li>  -->
 </ul>
-
 
 <style lang="scss">
   .nav {
