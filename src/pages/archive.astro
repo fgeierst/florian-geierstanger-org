@@ -9,7 +9,7 @@ const pages = await response.json();
 	<ul>
 		{pages.map((item) => (
 			<li>
-				<a href={`/wiki/${item.id}`}>
+				<a href={`/${item.id}`}>
 					{item.title}
 				</a>
 			</li>
