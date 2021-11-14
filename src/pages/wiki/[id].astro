@@ -6,17 +6,5 @@ export async function getStaticPaths() {
 }
 const {id} = Astro.request.params;
 
-<!-- export async function getStaticPaths() {
-    const projects = await getProjects();
-
-    return projects.map((project) => ({
-            params: { project: project.full_name },
-            props: { data: project } 
-        })
-    );
-}
-const {project} = Astro.request.params;
-const {data} = Astro.props; -->
-
 ---
 <p>Post: {id}</p>
