@@ -1,7 +1,7 @@
 ---
 import Nav from '../components/Nav.astro'
 
-let {title, content} = Astro.props;
+let {title, content, hasTitleElement=false} = Astro.props;
 
 const siteTitle = 'Florian Geierstanger';
 ---
@@ -21,7 +21,11 @@ const siteTitle = 'Florian Geierstanger';
 			<Nav />
 		</nav>
 		<main class="main">
-			<h1 class="page-title">{title}</h1>
+      {!hasTitleElement &&
+        <h1 class="page-title">
+          {title}
+        </h1>
+      }
 			<slot />
 		</main>
 	</div>
