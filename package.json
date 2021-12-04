@@ -9,10 +9,10 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.20.12",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0"
+    "astro": "^0.21.10",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
