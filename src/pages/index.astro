@@ -2,9 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const response = await fetch(`https://florian.geierstanger.org/lib/exe/ajax.php?call=api&fn=page&id=filmvermittlung`);
-const result = await response.json(); 
-console.log(result.html);
+const json = await response.json(); 
 ---
-<BaseLayout title={result.title} hasTitleElement={true}>
-  <div>{result.html}</div> 
+<BaseLayout title={json.title} hasTitleElement={true}>
+  <div>{json.html}</div> 
 </BaseLayout>

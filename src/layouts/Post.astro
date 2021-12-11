@@ -1,8 +1,8 @@
 ---
-import Base from '../layouts/Base.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 const {content} = Astro.props;
 ---
 
-<Base title={content.title}>
+<BaseLayout title={content.title}>
   <slot />
-</Base>
+</BaseLayout>
