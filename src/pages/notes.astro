@@ -1,6 +1,6 @@
 ---
 let title = "Notes";
-import BaseLayout from '../layouts/Base.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import NotesItem from '../components/NotesItem.astro';
 interface MarkdownFrontmatter {
   publishDate: number;
@@ -9,7 +9,7 @@ interface MarkdownFrontmatter {
 let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./notes/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
 ---
-<BaseLayout title="{title}">
+<BaseLayout title={title}>
 
 	<ul>
 		{allPosts.map(post => <NotesItem post={post} />)}

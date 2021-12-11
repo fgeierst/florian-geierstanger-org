@@ -13,11 +13,11 @@ export async function getStaticPaths() {
 }
 const {id} = Astro.request.params;
 
-import BaseLayout from '../layouts/Base.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const response = await fetch(`https://florian.geierstanger.org/lib/exe/ajax.php?call=api&fn=page&id=${id}`);
 const page = await response.json();
 ---
-<BaseLayout title="{page.title}" hasTitleElement={true}>
+<BaseLayout title={page.title} hasTitleElement={true}>
 	<div>{page.html}</div>
 </BaseLayout>

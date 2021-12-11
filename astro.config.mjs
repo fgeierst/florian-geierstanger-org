@@ -1,5 +1,9 @@
 // @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-  // Comment out "renderers: []" to enable Astro's default component support.
-  // renderers: [],
-});
+
+/** @type {import('astro').AstroUserConfig} */
+export default {
+  renderers: [],
+  vite: {
+    plugins: [],
+  },
+};
