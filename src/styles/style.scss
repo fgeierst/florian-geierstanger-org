@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  font-family: "Rubik";
+  font-family: Rubik;
   font-weight: 300 900;
   src: url("/assets/RubikVF.woff2");
   unicode-range:
@@ -35,7 +35,7 @@
 }
 
 body {
-  font-family: 'Rubik', system-ui, sans-serif;
+  font-family: Rubik, system-ui, sans-serif;
   font-weight: 300;
   margin: var(--gap);
 }

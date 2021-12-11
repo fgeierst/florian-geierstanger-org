@@ -9,19 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.21.12",
-    "stylelint": "^14.1.0",
-    "stylelint-config-standard": "^24.0.0",
-    "stylelint-order": "^5.0.0"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "plugins": [
-      "stylelint-order"
-    ],
-    "rules": {
-      "order/properties-alphabetical-order": true
-    }
+    "astro": "^0.21.12"
   },
   "dependencies": {
     "@snowpack/plugin-postcss": "^1.4.3"
