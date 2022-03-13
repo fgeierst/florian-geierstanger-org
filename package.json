@@ -9,9 +9,8 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.21.12"
-  },
-  "dependencies": {
-    "@snowpack/plugin-postcss": "^1.4.3"
+    "astro": "^0.24.0",
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "postcss": "*"
   }
 }
