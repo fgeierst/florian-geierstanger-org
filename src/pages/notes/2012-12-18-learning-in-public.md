@@ -1,6 +1,6 @@
 ---
 title: 'Learning in public'
-description: 'k
+description: ''
 publishDate: '2021-12-18'
 layout: '../../layouts/Post.astro'
 ---
