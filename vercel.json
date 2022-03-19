@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/_media/:match*", "destination": "https://florian.geierstanger.org/_media/:match*" }
+    { "source": "/_media", "destination": "https://florian.geierstanger.org/_media" }
   ]
 }
