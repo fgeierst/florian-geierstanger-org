@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/_media/:match*", "destination": "http://florian-geierstanger-org.hosting167248.a2f7e.netcup.net/lib/exe/fetch.php?media=:match*" }		
+    { "source": "/_media/:match*", "destination": "http://florian-geierstanger-org.hosting167248.a2f7e.netcup.net/_media/:match*" }		
   ]
 }
