@@ -8,7 +8,7 @@ const pages = await response.json();
 	<ul>
 		{pages.map((item) => (
 			<li>
-				<a href={`/${item.id}`}>
+				<a href={`/${item.id.replace(':', '/')}`}>
 					{item.title}
 				</a>
 			</li>

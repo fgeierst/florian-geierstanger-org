@@ -5,9 +5,10 @@ export async function getStaticPaths() {
 	const response = await fetch('https://wiki.fgeierst.de/lib/exe/ajax.php?call=api&fn=pages');
 	const pages = await response.json();
 	const paramsList = pages.map(page => {
+		const id = page.id.replace(':', '/');
 		return {
 			params: {
-				id: page.id
+				id: id
 			}
 		}
 	})
