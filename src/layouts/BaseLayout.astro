@@ -1,6 +1,8 @@
 ---
+import "../styles/style.scss";
 import Nav from '../components/Nav.astro'
-let {title, content, hasTitleElement=false} = Astro.props;
+import Footer from '../components/Footer.astro'
+let {title, content, hasTitleElement=false, date} = Astro.props;
 const siteTitle = 'Florian Geierstanger';
 ---
 <!DOCTYPE html>
@@ -13,10 +15,17 @@ const siteTitle = 'Florian Geierstanger';
 </head>
 <body>
 	<div class="wrapper">
-		<nav class="nav" >
+    <header>
 			<Nav />
-		</nav>
+    </header>
+
 		<main class="main">
+      {date &&
+        <p class="date">
+          {date}
+        </p>
+      }
+
       {!hasTitleElement &&
         <h1 class="page-title">
           {title}
@@ -24,16 +33,18 @@ const siteTitle = 'Florian Geierstanger';
       }
 			<slot />
 		</main>
+
+    <footer>
+      <Footer />
+    </footer>
 	</div>
 </body>
 
 </html>
 
-<style is:global>
-@import "../styles/style.scss";
-</style>
 
 <style lang="scss">
+
   .site-title {
     font-size: inherit;
     font-weight: inherit;
@@ -42,12 +53,13 @@ const siteTitle = 'Florian Geierstanger';
   .wrapper {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 70ch) 1fr;
+    row-gap: var(--space-32);
 
     & > * {
       grid-column: 2/-2;
     }
 
-    & > .nav {
+    & > header, & > footer {
       grid-column: 1/-1;
     }
   }

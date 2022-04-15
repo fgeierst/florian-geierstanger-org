@@ -1,8 +1,16 @@
 // @ts-check
+/** @type {import('astro')} */
 
-/** @type {import('astro').AstroUserConfig} */
 export default {
-  integrations: [],
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark-dimmed',
+      wrap: true,
+    },
+  },
+  integrations: [
+    
+  ],
   vite: {
     plugins: [],
   },
