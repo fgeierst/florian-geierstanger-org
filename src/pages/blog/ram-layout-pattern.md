@@ -26,6 +26,3 @@ layout: '../../layouts/Post.astro'
 
 - How to design for the RAM pattern
 	- You only have to specify the min width of one child item.
-	- Example:
-		- [[Adobe XD]]
-		- [[Figma]] Auto layout

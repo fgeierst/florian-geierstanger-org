@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.4.3",
-    "astro": "^0.24.0",
+    "astro": "1.0.0-beta.12",
     "postcss": "*",
     "sass": "^1.49.9"
   }

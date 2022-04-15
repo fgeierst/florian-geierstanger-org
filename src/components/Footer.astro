@@ -1,0 +1,44 @@
+<nav>
+	<ul>
+		<li><a href="sitemap/">Sitemap</a></li>
+		<li><a href="kontakt/">Kontakt</a></li>
+	</ul>
+</nav>
+
+<style lang="scss">
+	nav {
+		padding-block: 1rem;
+    &::before {
+      content: "";
+      display: block;
+      height: 4px;
+      width: var(--space-32);
+      background-color: hsl(0, 0%, 20%);
+      margin-block-end: var(--space-8);
+    }
+	}
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    list-style: none;
+    margin-block-end: 2rem;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+
+    li {
+      &.active a {
+        text-decoration: underline;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>

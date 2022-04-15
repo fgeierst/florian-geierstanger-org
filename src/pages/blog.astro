@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogItem from '../components/BlogItem.astro';
+
+let title = "Blog";
+
+let allPosts = await Astro.glob('./blog/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+---
+<BaseLayout title={title}>
+	 <ul>
+		{allPosts.map(post => <BlogItem post={post} />)}
+	</ul> 
+</BaseLayout>
