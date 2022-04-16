@@ -6,26 +6,40 @@
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+}
+
 html, body {
   height: 100%;
 }
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   margin: 0;
 }
-img, picture, video, canvas, svg {
+
+picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
+
 img {
   height: auto;
   display: block;
   max-width: 100%;
 }
+
+figcaption {
+  font-style: italic;
+}
+
 input, button, textarea, select {
   font: inherit;
 }
+
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+  margin-block-end: var(--space-16);
 }

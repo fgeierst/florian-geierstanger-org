@@ -56,8 +56,16 @@ const siteTitle = 'Florian Geierstanger';
     grid-column: container;
   }
 
-  .main > :global(*) {
-    grid-column: textcontent;
+  footer {
+    margin-block: var(--space-64);
+  }
+
+  .main {
+    margin-block-start: var(--space-64);
+    
+    > :global(*) {
+      grid-column: textcontent;
+    }
   }
 
   .date {

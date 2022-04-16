@@ -21,10 +21,6 @@ a {
 p {
 }
 
-.main > * + * {
-  margin-top: 2rem;
-}
-
 h1,
 h2,
 h3,
@@ -37,6 +33,5 @@ h5 {
 
 h1 {
   font-size: 1.4em;
-  margin-block-end: 2rem;
-  margin-block-start: 2rem;
+  margin-block-end: var(--space-32);
 }

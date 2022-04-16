@@ -29,9 +29,9 @@ const navItems = [
   },
 ];
 ---
-<nav class="nav">
+<nav>
 
-  <ul class="nav">
+  <ul class="nav__list">
       {navItems.map((item) => (
         <li class={`nav__item ${pathname == item.id ? "nav__item--active" : ""} ${item.additionalStyles}`}>
           <a class="nav__link" href={`${item.id}`}>
@@ -44,13 +44,19 @@ const navItems = [
 </nav>
 
 <style lang="scss">
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 2rem;
-    list-style: none;
+  nav {
     margin-block: var(--space-8);
-    padding-inline-start: 0;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      list-style: none;
+      margin-block: 0;
+      padding-inline-start: 0;
+    }
 
     &__item {
       &--active a {
