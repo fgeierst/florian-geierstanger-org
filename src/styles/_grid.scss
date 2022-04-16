@@ -1,0 +1,71 @@
+//
+// Pseudo subgrid
+//
+//
+//  [    32px     |<->|    160px   |   160px   |    640px    |   160px   |   160px   |<->|      32px    ]
+//  [ page-margin |<->|  expansion | expansion | textcontent | expansion | expansion |<->|  page-margin ]
+//  [ page-margin |<->|  expansion |              widecontent            | expansion |<->|  page-margin ]
+//  [ page-margin |<->|                           container                          |<->|  page-margin ]
+//  [                                             fullwidth                                             ]
+//
+// Usage: All direct children of .pseudo-subgrid are placed in the `fullwidth` grid track.
+// You can override this for indiviual children
+// - with HTML (class="textcontlayout-ntent|container|fullwidth")
+// - with CSS (grid-column: textcontent|widecontent|container|fullwidth;)
+//
+// Subgrid: There is no need to flatten the DOM structure.
+// If you apply the .pseudo-subgrid to a child element,
+// it's own children (the grandchildren) can use the parent grid tracks, too.
+
+.layout-grid {
+
+  --page-margin: var(--space-16);
+  --expansion: 160px;
+  --textcontent: 640px;
+  --widecontent: 960px; // = expansion + textcontent + expansion
+  --container: 1280px; // = expansion + container + expansion
+  --fullwidth: 100%;
+  --grid-column: fullwidth;
+
+  display: grid;
+  grid-column: fullwidth;
+
+  grid-template-columns:
+    [fullwidth-start] var(--page-margin)
+    [container-start widecontent-start textcontent-start]
+    minmax(auto, var(--textcontent))
+    [textcontent-end widecontent-end container-end]
+    var(--page-margin) [fullwidth-end];
+
+  @media (min-width: 720px) {
+    // page-margin + textcontent + page-margin + scrollbar (~15px)
+    grid-template-columns:
+      [fullwidth-start] minmax(var(--page-margin), 1fr)
+      [container-start] minmax(0, var(--expansion))
+      [widecontent-start] minmax(0, var(--expansion))
+      [textcontent-start] var(--textcontent) [textcontent-end]
+      minmax(0, var(--expansion)) [widecontent-end]
+      minmax(0, var(--expansion)) [container-end]
+      minmax(var(--page-margin), 1fr) [fullwidth-end];
+  }
+}
+
+.layout-grid > * {
+  grid-column: var(--grid-column);
+}
+
+.textcontent {
+  grid-column: textcontent;
+}
+
+.widecontent {
+  grid-column: widecontent;
+}
+
+.container {
+  grid-column: container;
+}
+
+.fullwidth {
+  grid-column: fullwidth;
+}

@@ -1,19 +1,18 @@
 /*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
+  Reset
+  Based on https://www.joshwcomeau.com/css/custom-css-reset/
 */
 *, *::before, *::after {
   box-sizing: border-box;
 }
-* {
-  // margin: 0;
-}
+
 html, body {
   height: 100%;
 }
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 img, picture, video, canvas, svg {
   display: block;

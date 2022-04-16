@@ -1,12 +1,12 @@
 ---
 import "../styles/style.scss";
-import Nav from '../components/Nav.astro'
+import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-let {title, content, hasTitleElement=false, date} = Astro.props;
+let {title, content, hasTitleElement=false, date, lang="de"} = Astro.props;
 const siteTitle = 'Florian Geierstanger';
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
@@ -14,12 +14,13 @@ const siteTitle = 'Florian Geierstanger';
   <link rel="preload" href="/assets/Rubik.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
-	<div class="wrapper">
+	<div class="layout-grid">
+
     <header>
-			<Nav />
+			<Header />
     </header>
 
-		<main class="main">
+		<main class="main layout-grid">
       {date &&
         <p class="date">
           {date}
@@ -37,6 +38,7 @@ const siteTitle = 'Florian Geierstanger';
     <footer>
       <Footer />
     </footer>
+
 	</div>
 </body>
 
@@ -50,17 +52,16 @@ const siteTitle = 'Florian Geierstanger';
     font-weight: inherit;
   }
 
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr minmax(auto, 70ch) 1fr;
-    row-gap: var(--space-32);
-
-    & > * {
-      grid-column: 2/-2;
-    }
-
-    & > header, & > footer {
-      grid-column: 1/-1;
-    }
+  header, footer {
+    grid-column: container;
   }
+
+  .main > :global(*) {
+    grid-column: textcontent;
+  }
+
+  .date {
+    font-style: italic;
+  }
+
 </style>

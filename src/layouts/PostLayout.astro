@@ -5,6 +5,6 @@ const date = new Date(content.publishDate);
 const localDate = date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
-<BaseLayout title={content.title} date={localDate}>
+<BaseLayout title={content.title} date={localDate} lang={content.lang}>
   <slot />
 </BaseLayout>
