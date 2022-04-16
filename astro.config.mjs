@@ -1,6 +1,8 @@
 // @ts-check
 /** @type {import('astro')} */
 
+import astroImagePlugin from "astro-imagetools/plugin";
+
 export default {
   markdown: {
     shikiConfig: {
@@ -12,6 +14,6 @@ export default {
     
   ],
   vite: {
-    plugins: [],
+    plugins: [astroImagePlugin],
   },
 };
