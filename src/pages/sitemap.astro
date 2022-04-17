@@ -1,10 +1,46 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-let title = "Sitemap";
+export const frontmatter = {
+	title: "Sitemap",
+	lang: "de"
+}
+
+let pages = []
+
+// collect fetched pages
 const response = await fetch('https://wiki.fgeierst.de/lib/exe/ajax.php?call=api&fn=pages');
-const pages = await response.json();
+const allFetchedPages = await response.json();
+allFetchedPages.forEach(page => {
+	pages.push({
+		title: page.title,
+		id: page.id.replaceAll(':', '/')
+	})
+});
+
+// collect Markdown pages
+const allMdPages = await Astro.glob('./blog/*.md')
+allMdPages.forEach(page => {
+	pages.push({
+		title: page.frontmatter.title,
+		id: page.url.substring(1)
+	})
+});
+
+// collect Astro pages
+const allAstroPages = await Astro.glob('./*.astro')
+allAstroPages.forEach(page => {
+	if (page?.frontmatter?.title) {
+		pages.push({
+			title: page?.frontmatter?.title,
+			id: '' // @todo add id
+		})
+	}
+});
+
+// output pages
+console.log(pages)
 ---
-<BaseLayout title={title}>
+<BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
 	<ul>
 		{pages.map((item) => (
 			<li>
