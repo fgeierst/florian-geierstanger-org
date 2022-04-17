@@ -1,9 +1,10 @@
 // @ts-check
 
 /** @type {import('astro')} */
-import astroImagePlugin from "astro-imagetools/plugin";
 import { defineConfig } from "astro/config";
+import astroImagePlugin from "astro-imagetools/plugin";
 import sitemap from "@astrojs/sitemap";
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
     }
   },
   site: 'https://florian-geierstanger-org.vercel.app/',
-  integrations: [sitemap()],
+  integrations: [sitemap(), svelte()],
   vite: {
     plugins: [astroImagePlugin]
   }

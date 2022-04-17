@@ -1,4 +1,5 @@
 ---
+import Search from './Search.svelte'
 const {pathname} = new URL(Astro.request.url);
 
 const navItems = [
@@ -41,6 +42,7 @@ const navItems = [
       ))}
   </ul>
 
+  <Search client:idle/>
 </nav>
 
 <style lang="scss">
