@@ -1,19 +1,21 @@
 // @ts-check
+
 /** @type {import('astro')} */
-
 import astroImagePlugin from "astro-imagetools/plugin";
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
-export default {
+// https://astro.build/config
+export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: 'github-dark-dimmed',
-      wrap: true,
-    },
+      wrap: true
+    }
   },
-  integrations: [
-    
-  ],
+  site: 'https://florian-geierstanger-org.vercel.app/',
+  integrations: [sitemap()],
   vite: {
-    plugins: [astroImagePlugin],
-  },
-};
+    plugins: [astroImagePlugin]
+  }
+});
