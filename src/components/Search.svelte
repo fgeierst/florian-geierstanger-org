@@ -54,5 +54,6 @@ $: filteredPages = pages.filter(page => {
 		max-height: 50vh;
 		overflow-y: scroll;
 		box-shadow: 1rem 1rem 1rem rgba(0,0,0,0.2);
+		border: 2px solid black;
 	}
 </style>
