@@ -41,13 +41,14 @@ $: filteredPages = pages.filter(page => {
 <style>
 	.search {
 		position: relative;
+		text-align: right;
 	}
 	.results {
 		list-style: none;
 		padding: 0;
 		position: absolute;
-		top:2em;
-		left: 0;
+		top: 2em;
+		right: 0;
 		width: 20em;
 		max-width: 80vw;
 		background-color: white;
