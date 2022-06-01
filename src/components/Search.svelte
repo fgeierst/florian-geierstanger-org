@@ -47,7 +47,7 @@ $: filteredPages = pages.filter(page => {
 		list-style: none;
 		padding: 0;
 		position: absolute;
-		top: 2em;
+		top: var(--space-200);
 		right: 0;
 		width: 20em;
 		max-width: 80vw;
