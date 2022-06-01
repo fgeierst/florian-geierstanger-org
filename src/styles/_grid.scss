@@ -1,13 +1,16 @@
 //
 // Layout Grid
 //
+// grid-column: fullwidth;   //  100%
+// grid-column: maxcontent;  // 1280px
+// grid-column: widecontent; //  960px
+// grid-column: textcontent; //  640px
 
 :root {
 	--grid-margin: var(--space-16);
   --grid-expansion: 160px;
   --grid-textcontent: 640px;
-  --grid-widecontent: 960px; // = expansion + textcontent + expansion
-  --grid-maxcontent: 1280px; // = expansion + widecontent + expansion
+
   --grid:
     [fullwidth-start] var(--grid-margin)
     [maxcontent-start widecontent-start textcontent-start]
@@ -18,37 +21,21 @@
   @media (min-width: 720px) {
     // grid-margin + textcontent + grid-margin + scrollbar (~15px)
 		--grid:
-		[fullwidth-start] minmax(var(--grid-margin), 1fr)
-		[maxcontent-start] minmax(0, var(--grid-expansion))
-		[widecontent-start] minmax(0, var(--grid-expansion))
-		[textcontent-start] var(--grid-textcontent) [textcontent-end]
-		minmax(0, var(--grid-expansion)) [widecontent-end]
-		minmax(0, var(--grid-expansion)) [maxcontent-end]
-		minmax(var(--grid-margin), 1fr) [fullwidth-end];
+      [fullwidth-start] minmax(var(--grid-margin), 1fr)
+      [maxcontent-start] minmax(0, var(--grid-expansion))
+      [widecontent-start] minmax(0, var(--grid-expansion))
+      [textcontent-start] var(--grid-textcontent) [textcontent-end]
+      minmax(0, var(--grid-expansion)) [widecontent-end]
+      minmax(0, var(--grid-expansion)) [maxcontent-end]
+      minmax(var(--grid-margin), 1fr) [fullwidth-end];
 	}
 }
 
 .layout-grid {
-  grid-column: fullwidth;
+  grid-column: fullwidth !important;
   display: grid;
   grid-template-columns: var(--grid);
   > * {
     grid-column: fullwidth;
   }
-}
-
-.textcontent {
-  grid-column: textcontent;
-}
-
-.widecontent {
-  grid-column: widecontent;
-}
-
-.container {
-  grid-column: container;
-}
-
-.fullwidth {
-  grid-column: fullwidth !important;
 }
