@@ -51,10 +51,10 @@ $: filteredPages = pages.filter(page => {
 		right: 0;
 		width: 20em;
 		max-width: 80vw;
-		background-color: white;
+		background-color: var(--color-background);
 		max-height: 50vh;
 		overflow-y: scroll;
-		box-shadow: 1rem 1rem 1rem rgba(0,0,0,0.2);
-		border: 2px solid black;
+		box-shadow: 1rem 1rem 1rem hsla(var(--hsl-text), 0.2);
+		border: 2px solid hsla(var(--hsl-text), 0.5);
 	}
 </style>
