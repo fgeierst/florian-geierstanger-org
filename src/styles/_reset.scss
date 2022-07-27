@@ -46,3 +46,10 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
   margin-block-end: var(--space-100);
 }
+
+.video {
+  width: 100%;
+  height: auto;
+  grid-column: maxcontent !important;
+  margin-block: var(--space-200) var(--space-100);
+}

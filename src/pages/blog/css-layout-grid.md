@@ -1,16 +1,16 @@
 ---
-title: 'A CSS layout grid'
+title: 'Re-thinking the layout grid with CSS grid'
 publishDate: '2022-07-27'
 layout: '../../layouts/PostLayout.astro'
 lang: 'en'
 ---
 
-The twelfe column bootstrap grid is a great layout tool and still widely used. Here is a different approach, that is built upon the capabilites of modern CSS, especially CSS grid.
+While the twelfe column [Bootstrap grid](https://getbootstrap.com/docs/5.0/layout/grid/) has become the de facto standard for website layouts, modern CSS and especially [CSS grid](https://web.dev/learn/css/grid/) provides the oportunity to re-think this concept. Here is a fresh take on how a responsive, mobile first layout grid can be built.
 
-![Grid tracks](/src/images/layout-grid-tracks.jpeg)
+<video class="video" src="/src/images/layout-grid-responsive.mp4" poster="/src/images/layout-grid-responsive-poster.jpg" width="1920" autoplay loop controls></video>
 
 ## Features
-Our mobile first grid provides four tracks (fullwidth, max content, wide content, text content), each with it's own start and end grid lines. On small devices, the three content tracks fall into one, only fullwidth track gives you the possiblity to reach out to the page margins. On bigger screens, the distinct tracks provide great variation how to present and distinguish content elements from each other. As this is based on CSS grid, mix and match these lines and place for example an image at the far left and the let it stretch across until the end of the text content track.
+Our mobile first grid provides four tracks (fullwidth, max content, wide content, text content), each with it's own start and end grid lines. On small devices, the three content tracks fall into one, only fullwidth track gives you the possiblity to reach out to the page margins. On bigger screens, the distinct tracks provide great variation how to present and distinguish content elements from each other. As this is based on CSS grid, you can mix and match these lines and place for example an image at the far left and the let it stretch across until the end of the text content track.
 
 ## Code (SCSS)
 ```scss
@@ -22,7 +22,7 @@ Our mobile first grid provides four tracks (fullwidth, max content, wide content
   --grid:
     [fullwidth-start] var(--grid-margin)
     [maxcontent-start widecontent-start textcontent-start]
-    minmax(auto, var(--grid-textcontent))
+    1fr
     [textcontent-end widecontent-end maxcontent-end]
     var(--grid-margin) [fullwidth-end];
 
@@ -48,8 +48,11 @@ Our mobile first grid provides four tracks (fullwidth, max content, wide content
   }
 }
 ```
+<p><a href="https://codepen.io/fgeierst/pen/OJQOeaR" >Codepen</a></p>
 
-## Subgrid
+## Notes
 
-With the upcoming CSS subgrid feature, this grid will become even more powerfull, as you then can use the grid track from a parent.
+- With the upcoming [CSS subgrid feature]([https://](https://caniuse.com/css-subgrid)), this grid will become even more powerfull, as you then can use the grid track from a parent.
+
+- Shout-out to [Lukas Bahr](https://www.lukas-bahr.de/)  who's UI designs inspired this grid in the first place, back in January of this year, and who closely colaborated in improving it ever since.
 
