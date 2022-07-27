@@ -1,4 +1,26 @@
 .astro-code {
-	border-radius: var(--space-50);
-	padding: var(--space-50);
+	font-size: 1rem;
+	margin-block-end: var(--space-200) ;
+	grid-column: fullwidth !important;
+	display: grid;
+	grid-template-columns: var(--grid);
+	background-color: transparent !important;
+	
+	&::before {
+		content: '';
+		background-color: var(--color-text);
+		grid-row: 1 / -1;
+		grid-column: fullwidth;
+		
+		@media (min-width: 720px) {
+			grid-column: maxcontent;
+			border-radius: var(--space-50);
+		}
+	}
+	
+	> code {
+		padding-block: var(--space-200);
+		grid-row: 1 / -1;
+		grid-column: widecontent;
+	}
 }

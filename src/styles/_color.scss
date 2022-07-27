@@ -10,8 +10,6 @@
 	@media (prefers-color-scheme: dark) { 
 		--hsl-background: var(--hsl-black);
 		--hsl-text: var(--hsl-white);
-		--color-background: hsl(var(--hsl-background));
-		--color-text: hsl(var(--hsl-text));
 	}
 }
 

@@ -14,7 +14,7 @@
   --grid:
     [fullwidth-start] var(--grid-margin)
     [maxcontent-start widecontent-start textcontent-start]
-    minmax(auto, var(--grid-textcontent))
+    1fr
     [textcontent-end widecontent-end maxcontent-end]
     var(--grid-margin) [fullwidth-end];
 
@@ -38,4 +38,8 @@
   > * {
     grid-column: fullwidth;
   }
+}
+
+.widecontent {
+  grid-column: widecontent;
 }

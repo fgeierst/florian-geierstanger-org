@@ -24,7 +24,7 @@ $: filteredPages = pages.filter(page => {
 
 <div class="search">
 	<label>
-		Search
+		Suche
 		<input type="text" bind:value={query}>
 	</label>
 	
@@ -42,12 +42,13 @@ $: filteredPages = pages.filter(page => {
 	.search {
 		position: relative;
 		text-align: right;
+		padding-block-start: var(--space-100);
 	}
 	.results {
 		list-style: none;
 		padding: 0;
 		position: absolute;
-		top: var(--space-200);
+		top: var(--space-300);
 		right: 0;
 		width: 20em;
 		max-width: 80vw;
