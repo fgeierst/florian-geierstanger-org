@@ -12,7 +12,7 @@ export async function get() {
 	});
 
 	// collect Markdown pages 
-	const allMarkdownPages = await import.meta.glob('./blog/*.md', { eager: true });
+	const allMarkdownPages = import.meta.glob('./blog/*.md', { eager: true });
 	Object.values(allMarkdownPages).forEach(page => {
 		pages.push({
 			title: page.frontmatter.title,
@@ -21,7 +21,7 @@ export async function get() {
 	});
 
 	// collect Astro pages 
-	const allAstroPages = await import.meta.glob('./*.astro', { eager: true });
+	const allAstroPages = import.meta.glob('./*.astro', { eager: true });
 	Object.values(allAstroPages).forEach(page => {
 		if (page.frontmatter) {
 			pages.push({
