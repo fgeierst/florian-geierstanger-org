@@ -54,5 +54,5 @@ Our mobile first grid provides four tracks (fullwidth, max content, wide content
 
 - With the upcoming [CSS subgrid feature]([https://](https://caniuse.com/css-subgrid)), this grid will become even more powerfull, as you then can use the grid track from a parent.
 
-- Shout-out to [Lukas Bahr](https://www.lukas-bahr.de/)  who's UI designs inspired this grid in the first place, back in January of this year, and who closely colaborated in improving it ever since.
+- Shout-out to Lukas Bahr  who's UI designs inspired this grid in the first place, back in January of this year, and who closely colaborated in improving it ever since.
 
