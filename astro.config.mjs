@@ -1,5 +1,3 @@
-// @ts-check
-
 /** @type {import('astro')} */
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
@@ -14,6 +12,7 @@ export default defineConfig({
       wrap: true
     }
   },
+  site: 'https://florian.geierstanger.org',
   integrations: [
     astroImageTools,
     sitemap(),

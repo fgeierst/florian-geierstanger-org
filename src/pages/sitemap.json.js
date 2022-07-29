@@ -20,7 +20,8 @@ export async function get() {
 		})
 	});
 
-	// collect Astro pages 
+	// @todo: BUG: when `import.meta.glob` is enabled below <link rel="stylesheet"> is missing in all .astro files.
+	// // collect Astro pages 
 	// const allAstroPages = import.meta.glob('./*.astro', { eager: true });
 	// Object.values(allAstroPages).forEach(page => {
 	// 	if (page.frontmatter) {
