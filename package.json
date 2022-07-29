@@ -1,7 +1,6 @@
 {
-  "name": "@example/minimal",
+  "name": "florian.geierstanger.org",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
