@@ -7,29 +7,30 @@ export async function get() {
 	allFetchedPages.forEach(page => {
 		pages.push({
 			title: page.title,
-			id: page.id.replaceAll(':', '/')
+			id: '/' + page.id.replaceAll(':', '/')
 		})
 	});
 
 	// collect Markdown pages 
-	const allMarkdownPages = await import.meta.globEager(`./blog/*.md`);
+	const allMarkdownPages = import.meta.glob('./blog/*.md', { eager: true });
 	Object.values(allMarkdownPages).forEach(page => {
 		pages.push({
 			title: page.frontmatter.title,
-			id: page.url.substring(1)
+			id: page.url
 		})
 	});
 
-	// collect Astro pages 
-	const allAstroPages = await import.meta.globEager(`./*.astro`);
-	Object.values(allAstroPages).forEach(page => {
-		if (page.frontmatter) {
-			pages.push({
-				title: page.frontmatter.title,
-				id: '' // @todo add id
-			})
-		}
-	});
+	// @todo: BUG: when `import.meta.glob` is enabled below <link rel="stylesheet"> is missing in all .astro files.
+	// // collect Astro pages 
+	// const allAstroPages = import.meta.glob('./*.astro', { eager: true });
+	// Object.values(allAstroPages).forEach(page => {
+	// 	if (page.frontmatter) {
+	// 		pages.push({
+	// 			title: page.frontmatter.title,
+	// 			id: page.url ? page.url : '/'
+	// 		})
+	// 	}
+	// });
 
 	// build json
   return {

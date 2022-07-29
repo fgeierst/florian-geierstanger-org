@@ -1,5 +1,3 @@
-// @ts-check
-
 /** @type {import('astro')} */
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
@@ -14,9 +12,10 @@ export default defineConfig({
       wrap: true
     }
   },
-  experimental: {
-    integrations: true,
-  },
-  site: 'https://florian-geierstanger-org.vercel.app/',
-  integrations: [astroImageTools, sitemap(), svelte(), ],
+  site: 'https://florian.geierstanger.org',
+  integrations: [
+    astroImageTools,
+    sitemap(),
+    svelte(),
+  ],
 });

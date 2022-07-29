@@ -53,7 +53,8 @@ const siteTitle = 'Florian Geierstanger';
 </html>
 
 
-<style lang="scss">
+<style lang="scss" is:global>
+.layout-grid {
 
   .site-title {
     font-size: inherit;
@@ -71,7 +72,7 @@ const siteTitle = 'Florian Geierstanger';
   .main {
     margin-block-start: var(--space-400);
     
-    > :global(*) {
+    > * {
       grid-column: textcontent;
     }
   }
@@ -79,5 +80,5 @@ const siteTitle = 'Florian Geierstanger';
   .date {
     font-style: italic;
   }
-
+}
 </style>
