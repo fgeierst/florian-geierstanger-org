@@ -14,9 +14,9 @@ export default defineConfig({
       wrap: true
     }
   },
-  experimental: {
-    integrations: true,
-  },
-  site: 'https://florian-geierstanger-org.vercel.app/',
-  integrations: [astroImageTools, sitemap(), svelte(), ],
+  integrations: [
+    astroImageTools,
+    sitemap(),
+    svelte(),
+  ],
 });
