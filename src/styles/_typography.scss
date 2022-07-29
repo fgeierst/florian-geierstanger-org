@@ -6,6 +6,8 @@ body {
 
 a {
   color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.25em;
 }
 
 p {
