@@ -11,10 +11,8 @@
   "devDependencies": {
     "@astrojs/sitemap": "^0.3.0",
     "@astrojs/svelte": "^0.5.1",
-    "@snowpack/plugin-postcss": "^1.4.3",
     "astro": "1.0.0-rc.2",
     "astro-imagetools": "^0.6.10",
-    "postcss": "*",
     "sass": "^1.54.0",
     "svelte": "^3.49.0"
   }
