@@ -21,15 +21,15 @@ export async function get() {
 	});
 
 	// collect Astro pages 
-	const allAstroPages = import.meta.glob('./*.astro', { eager: true });
-	Object.values(allAstroPages).forEach(page => {
-		if (page.frontmatter) {
-			pages.push({
-				title: page.frontmatter.title,
-				id: page.url ? page.url : '/'
-			})
-		}
-	});
+	// const allAstroPages = import.meta.glob('./*.astro', { eager: true });
+	// Object.values(allAstroPages).forEach(page => {
+	// 	if (page.frontmatter) {
+	// 		pages.push({
+	// 			title: page.frontmatter.title,
+	// 			id: page.url ? page.url : '/'
+	// 		})
+	// 	}
+	// });
 
 	// build json
   return {
