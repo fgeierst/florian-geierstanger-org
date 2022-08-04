@@ -42,8 +42,12 @@ input, button, textarea, select {
   border-color: var(--color-text);
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, ul, ol {
   overflow-wrap: break-word;
+  margin-block-end: var(--space-100);
+}
+
+li {
   margin-block-end: var(--space-100);
 }
 
