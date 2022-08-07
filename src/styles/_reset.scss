@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   margin: 0;
 }
@@ -51,9 +51,15 @@ li {
   margin-block-end: var(--space-100);
 }
 
+code {
+  background-color: hsla(var(--hsl-text), 0.05);
+  border: 1px solid hsla(var(--hsl-text), 0.15);
+  padding-inline: .25em;
+}
+
 .layout-grid .video {
   grid-column: maxcontent;
-  margin-block: var(--space-200) var(--space-100);
+  margin-block: var(--space-200) var(--space-200);
   
   > video {
     width: 100%;
