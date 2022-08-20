@@ -1,26 +1,31 @@
+//
+// Code block
+//
+
 .astro-code {
+	tab-size: 2;
 	font-size: 1rem;
+	background-color: hsla(var(--hsl-text), .05) !important;
+	border-radius: .4rem;
 	margin-block-end: var(--space-200) ;
-	grid-column: fullwidth !important;
-	display: grid;
-	grid-template-columns: var(--grid);
-	background-color: transparent !important;
-	
-	&::before {
-		content: '';
-		background-color: var(--color-text);
-		grid-row: 1 / -1;
-		grid-column: fullwidth;
-		
-		@media (min-width: 720px) {
-			grid-column: maxcontent;
-			border-radius: var(--space-50);
-		}
-	}
-	
+	margin-inline: calc(var(--space-100) * -1);
+	padding: var(--space-100);
+
 	> code {
-		padding-block: var(--space-200);
-		grid-row: 1 / -1;
-		grid-column: widecontent;
+		background-color: unset;
+		border: unset;
+		border-radius: unset;
+		padding-inline: unset;
 	}
+}
+
+//
+// Inline code snippet
+//
+
+code {
+  background-color: hsla(var(--hsl-text), 0.05);
+  border: 1px solid hsla(var(--hsl-text), 0.06);
+	border-radius: .3rem;
+  padding-inline: .25em;
 }

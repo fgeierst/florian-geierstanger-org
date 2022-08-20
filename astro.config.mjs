@@ -8,8 +8,7 @@ import { astroImageTools } from "astro-imagetools";
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: 'github-dark-dimmed',
-      wrap: true
+      theme: 'github-light',
     }
   },
   site: 'https://florian.geierstanger.org',

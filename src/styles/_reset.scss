@@ -12,6 +12,12 @@
 
 html, body {
   height: 100%;
+
+  // prevent overflow issues
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 body {
@@ -49,12 +55,6 @@ p, h1, h2, h3, h4, h5, h6, ul, ol {
 
 li {
   margin-block-end: var(--space-100);
-}
-
-code {
-  background-color: hsla(var(--hsl-text), 0.05);
-  border: 1px solid hsla(var(--hsl-text), 0.15);
-  padding-inline: .25em;
 }
 
 .layout-grid .video {
