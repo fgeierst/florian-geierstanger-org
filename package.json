@@ -8,11 +8,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^0.3.0",
-    "@astrojs/svelte": "^0.5.1",
-    "astro": "1.0.0-rc.2",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/svelte": "^1.0.0",
+    "astro": "1.0.6",
     "astro-imagetools": "^0.6.10",
-    "sass": "^1.54.0",
+    "sass": "^1.54.5",
     "svelte": "^3.49.0"
   }
 }
