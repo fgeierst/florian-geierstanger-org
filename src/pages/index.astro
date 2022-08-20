@@ -1,5 +1,5 @@
 ---
-import { Img } from "astro-imagetools/components";
+import { Image } from '@astrojs/image/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 export const frontmatter = {
 	title: "Biografie",
@@ -8,14 +8,12 @@ export const frontmatter = {
 ---
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
 	<figure class="layout-grid">
-		<Img 
-			src="/src/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg" 
-			alt="Dreharbeiten im Sudan" 
+		<Image 
+			src={import('/src/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg')} 
+			width={835} 
+			height={470}
 			format="webp"
-			preload="webp"
-			breakpoints={[450, 900, 1400]}
-			sizes="(min-width: 1300px) 900px, calc(100vw-2rem)"
-		/>
+			/>
 		<figcaption>Dreharbeiten im Sudan (Foto: Rüdiger Lorenz)</figcaption>
 	</figure>
 
@@ -27,7 +25,7 @@ export const frontmatter = {
 		figure {
 			margin-block-end: var(--space-200);
 			
-			> .astro-imagetools-img {
+			> img {
 				width: 100%;
 				grid-column: widecontent;
 				margin-block-end: var(--space-50);

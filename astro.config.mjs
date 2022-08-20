@@ -2,19 +2,15 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
-import { astroImageTools } from "astro-imagetools";
+import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: 'github-light',
+      theme: 'github-light'
     }
   },
   site: 'https://florian.geierstanger.org',
-  integrations: [
-    astroImageTools,
-    sitemap(),
-    svelte(),
-  ],
+  integrations: [sitemap(), svelte(), image()]
 });
