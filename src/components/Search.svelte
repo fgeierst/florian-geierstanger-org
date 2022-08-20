@@ -29,7 +29,7 @@ $: filteredPages = pages.filter(page => {
 	</label>
 	
 	{#if query}
-	<ul class="results" transition:slide>
+	<ul transition:slide>
 		{#each filteredPages as page}
 			<li><a href="{page.id}">{page.title}</a></li>
 		{/each}
@@ -42,11 +42,13 @@ $: filteredPages = pages.filter(page => {
 	.search {
 		position: relative;
 		text-align: right;
-		padding-block-start: var(--space-100);
+		padding-block-start: var(--space-50);
+		z-index: 1;
 	}
-	.results {
+
+	ul {
 		list-style: none;
-		padding: 0;
+		padding: var(--space-50);
 		position: absolute;
 		top: var(--space-300);
 		right: 0;
@@ -54,8 +56,19 @@ $: filteredPages = pages.filter(page => {
 		max-width: 80vw;
 		background-color: var(--color-background);
 		max-height: 50vh;
-		overflow-y: scroll;
-		box-shadow: 1rem 1rem 1rem hsla(var(--hsl-text), 0.2);
-		border: 2px solid hsla(var(--hsl-text), 0.5);
+		overflow-y: scroll !important;
+		box-shadow: 0 0 3rem hsla(var(--hsl-text), 0.05);
+		border: 2px solid hsla(var(--hsl-text), 1);
+	}
+
+	li {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-block-end: unset;
+	}
+
+	a {
+		text-decoration: none;
 	}
 </style>
