@@ -12,7 +12,7 @@ export async function get() {
 	});
 
 	// collect Markdown pages 
-	const allMarkdownPages = import.meta.glob('./blog/*.md', { eager: true });
+	const allMarkdownPages = import.meta.glob('./blog/*.md*', { eager: true });
 	Object.values(allMarkdownPages).forEach(page => {
 		pages.push({
 			title: page.frontmatter.title,
