@@ -6,7 +6,7 @@ export const frontmatter = {
 	lang: "en"
 }
 
-let allPosts = await Astro.glob('./blog/*.md');
+let allPosts = await Astro.glob('./blog/*.md*');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
