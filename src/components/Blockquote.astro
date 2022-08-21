@@ -1,0 +1,41 @@
+---
+const { author, url } = Astro.props;
+---
+
+<figure class="blockquote">
+  <blockquote cite={url}>
+		<p>
+			<slot /> 
+		</p>
+  </blockquote>
+  <figcaption>&mdash; 
+		<a href={url}>
+			{author}
+		</a>
+	</figcaption>
+</figure>
+
+<style lang="scss">
+	figure {
+		border-inline-start: 3px solid;
+		padding-inline-start: var(--space-100);
+		margin-block-start: var(--space-100);
+		margin-block-end: var(--space-150);
+	}
+
+	blockquote {
+		font-style: italic;
+	}
+
+	p {
+		margin-block-end: 0;
+	}
+
+	figcaption {
+		font-style: normal;
+
+		a {
+			text-decoration: none;
+		}
+	}
+</style>
