@@ -2,7 +2,7 @@
 import "../styles/style.scss";
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-let {title, content, hasTitleElement=false, date, lang="de"} = Astro.props;
+let {title, content, hasTitleElement=false, date, lang="de", description} = Astro.props;
 const siteTitle = 'Florian Geierstanger';
 ---
 <!DOCTYPE html>
@@ -39,6 +39,12 @@ const siteTitle = 'Florian Geierstanger';
         <h1 class="page-title">
           {title}
         </h1>
+      }
+
+      {description &&
+        <p class="description">
+          {description}
+        </p>
       }
 			<slot />
 		</main>
@@ -79,6 +85,11 @@ const siteTitle = 'Florian Geierstanger';
 
   .date {
     font-style: italic;
+  }
+
+  .description {
+    font-size: 1.25em;
+    font-weight: 350;
   }
 }
 </style>

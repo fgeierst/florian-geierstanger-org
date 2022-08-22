@@ -1,7 +1,8 @@
 ---
-title: 'Quick TYPO3 Installation Guide using DDEV, Composer and Sitepackagebuilder'
-description: ''
+title: 'TYPO3 Quick Installation Guide '
+description: 'The famous five minutes installation using using DDEV, Composer and Sitepackagebuilder.'
 publishDate: '2022-08-20'
+updatedDate: '2022-08-22'
 layout: '../../layouts/PostLayout.astro'
 lang: 'en'
 ---
