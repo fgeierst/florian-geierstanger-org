@@ -13,11 +13,13 @@
 html, body {
   height: 100%;
 
-  // prevent overflow issues
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  @media (max-width: 600px) {
+    // prevent overflow issues
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
 }
 
 body {
