@@ -66,13 +66,13 @@ $: filteredPages = pages.filter(page => {
 
 <style lang="scss">
 	.search {
-		--search-height: 2.3em;
+		--search-height: 2.2em;
 		--search-width: 100%;
 		
 		@media (min-width: 500px)  {
 			--search-width: 15em;
 		}
-		
+
 		position: relative;
 		text-align: right;
 		padding-block-start: var(--space-50);
@@ -86,8 +86,8 @@ $: filteredPages = pages.filter(page => {
 		padding-inline: .5em;
 
 		&:focus-visible {
-			border-style: solid;
 			outline: none;
+			border-style: solid;
 		}
 
 		&::placeholder {
