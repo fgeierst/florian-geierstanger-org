@@ -8,9 +8,12 @@ lang: 'en'
 
 ## Prerequisites
 
-Install [Docker Desktop and DDEV Local](https://ddev.readthedocs.io/en/stable/users/install/).
+Install [Docker Desktop and DDEV Local](https://ddev.readthedocs.io/en/stable/users/install/) (macOS, Windows/WSL 2, Linux).
 
-## Make a new directory 
+Start Docker Desktop from the command line with `open -a Docker` (macOS).
+
+
+## Make a new directory for your project 
 (for example in the folder *~/Projects/*)  
 
 ```shell
@@ -18,40 +21,39 @@ mkdir my-new-project
 cd my-new-project
 ```
 
-## Install TYPO3 with DDEV  
+## Setup a DDEV project, download and install TYPO3 with Composer
 
-(The following steps are taken from https://get.typo3.org/, section *Set up a new project via DDEV Local and Composer*)  
-- when prompted to *Specify the site setup type*, select `site`  
-- when prompted, you may use these conventions for local development  
-  - username: `admin`  
-  - password: `password`  
-  
+The following steps are taken from [get.typo3.org](https://get.typo3.org/).
+
 ```shell
 ddev config --project-type=typo3 --docroot=public --create-docroot
 ddev composer create --no-install "typo3/cms-base-distribution:^11.5"
 ddev composer install
 ddev typo3cms install:setup
 ```
+- When prompted, you may use these conventions for local development  
+  - username: `admin`  
+  - password: `password`  
+- When prompted to *Specify the site setup type*, select `site`  
 
-## Add this snippet to /composer.json, as a child of `"config":`  
+## Create a folder for local composer packages and configure Composer accordingly
 
-```json
-"repositories": [
-	{
-		"type": "path",
-		"url": "./packages/*"
-	}
-],
+```bash
+mkdir -p packages 
+ddev composer config repositories.local path "packages/*"
 ```
-## Create a new basepackage with [sitepackagebuilder.com](https://www.sitepackagebuilder.com/new/)
+## Create a new base package
 
-- Select *Fluid Styled Content* base package  
+- Go to [sitepackagebuilder.com](https://www.sitepackagebuilder.com/new/)
+- Select *Fluid Styled Content* as a base package  
 - Company and title fields will be used to generate namespace and package name, so you might want to keep these rather short  
 - Add ` base` to the end of your title (for example `my new project base`) to indicate this is your basepackage.  
 - Create new folder `mkdir packages`  
 - Download the and extract the .zip file and copy the folder to /packages/  
   
-## In */packages/my_new_project_base/composer.json* add a version number  
+## Give the base package a version number
+
+Open */packages/my_new_project_base/composer.json* in your code editor and add a new entry for the version:
  
 ```json
 {
@@ -60,7 +62,9 @@ ddev typo3cms install:setup
 }
 ```
 
-## Require the new base package with composer, using name and version from above  
+## Require the new base package with composer
+
+Use name and version from above:
  
 ```bash
 ddev composer require my-company/my-new-project-base:^0.0.1
@@ -89,3 +93,13 @@ ddev launch typo3
 ```typoscript
 @import 'EXT:my_new_project_base/Configuration/TypoScript/setup.typoscript'
 ```
+
+Done!
+
+
+
+## Background
+
+As a frontend developer setting up new projects is not my day to day business. However I find it useful to be able to quickly spin up a fresh TYPO3 installation. With this I'm able to try out new ideas, like the [TYPO3 Vite integration](/blog/typo3-vite/). Having access to a barebones installation also helps me to understand things better, compared to the grown and rather large projects I usually work with.
+
+Shout out to Korbinian Kugelmann, Sebastian Hofer and [Eric Bode](https://twitter.com/ErHaWeb/status/1561668711383240704).
