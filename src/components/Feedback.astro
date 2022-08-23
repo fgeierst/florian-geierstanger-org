@@ -1,0 +1,45 @@
+---
+const { github="https://github.com/fgeierst/florian-geierstanger-org", twitter="https://twitter.com/kino_auge", email="florian@geierstanger.org" } = Astro.props;
+---
+
+<aside class="feedback">
+	<h2>
+		<slot>Any feedback is welcome!</slot>
+	</h2>
+	<ul>
+		<li>
+			<a href={`mailto:${email}`}>
+				Email
+			</a>
+		</li>
+		<li>
+			<a href={twitter}>
+				Twitter
+		</a>
+	</li>
+		<li>
+			<a href={github}>
+				Github
+			</a>
+	</li>
+	</ul>
+</aside>
+
+<style lang="scss">
+	aside {
+		// border: 2px solid;
+		// background-color: pink;
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-100) var(--space-200);
+		list-style: none;
+		padding-inline-start: 0;
+	}
+
+	li {
+		margin-block-end: 0;
+	}
+</style>
