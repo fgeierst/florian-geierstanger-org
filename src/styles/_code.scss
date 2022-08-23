@@ -6,7 +6,15 @@
 	tab-size: 2;
 	font-size: 1rem;
 	background-color: hsla(var(--hsl-text), .05) !important;
-	border-radius: .4rem;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: hsla(var(--hsl-white), .9) !important;
+	}
+
+	@media (min-width: 720px) {
+		border-radius: .4rem;
+	}
+
 	margin-block-end: var(--space-200) ;
 	margin-inline: calc(var(--space-100) * -1);
 	padding: var(--space-100);
