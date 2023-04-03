@@ -9,7 +9,7 @@ export const frontmatter = {
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
 	<figure class="layout-grid">
 		<Image 
-			src={'/src/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg'}
+			src={import('/src/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg')} 
 			width={835} 
 			height={470}
 			format="webp"
