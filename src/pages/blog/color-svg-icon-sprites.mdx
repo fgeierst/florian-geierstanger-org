@@ -1,0 +1,65 @@
+---
+title: 'Coloring SVG icon sprites in HTML and CSS'
+description: 'Piercing through SVG Shadow DOM and using SVG fragments as a pseudo element mask.'
+publishDate: '2023-04-03'
+layout: '../../layouts/PostLayout.astro'
+lang: 'en'
+---
+
+As long as a SVG is inlined, you can style it's colors with CSS just like that: `fill: red` and `stroke: blue`. As soon as you load the SVG as an external ressource, coloring it is less obvious. Here is what I found out.
+
+## &lt;symbol&gt; in SVG
+
+I put several icons into *sprite.svg*
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<!-- y=000 search -->
+	<symbol id="search" viewBox="0 0 25 25">
+		<path style="stroke: var(--color-icon, black)" stroke-width="2" fill="none" d="m16 16 8 8m-6-13a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+	</symbol>
+	<use xlink:href="#search" width="25" height="25" x="0" y="0"/>
+	<view id="search-view" viewBox="0 0 25 25"/>
+
+	<!-- y=100 globe -->
+	<symbol id="globe" fill="none" viewBox="0 0 25 26">
+		<path style="fill: var(--color-icon, black)" d="M12.5 26a12.3 12.3 0 0 1-8.9-3.7A12.4 12.4 0 0 1 0 13.4 12.3 12.3 0 0 1 7.6 2C10.7.7 14.3.7 17.4 2A12.2 12.2 0 0 1 25 13.4 12.5 12.5 0 0 1 12.5 26Zm0-1.8c.7-.8 1.4-1.6 1.8-2.6.6-1 1-2.3 1.2-3.4h-6l1.2 3.3a8 8 0 0 0 1.8 2.7Zm-2.7-.4a15 15 0 0 1-2.2-5.6H2.9c.7 1.3 1.6 2.5 2.7 3.4a14 14 0 0 0 4.2 2.2Zm5.4 0a13.8 13.8 0 0 0 7-5.6h-4.7l-1 3c-.3 1-.8 1.8-1.3 2.6Zm-13-7.5h5a17.6 17.6 0 0 1-.1-2.9 27.5 27.5 0 0 1 .1-2.7h-5a9.1 9.1 0 0 0-.2 4.2l.2 1.4Zm7 0h6.7a21.5 21.5 0 0 0 0-5.6H9.2a22 22 0 0 0 0 5.6Zm8.5 0h5a8.8 8.8 0 0 0 .4-2.9 11 11 0 0 0-.4-2.7h-5a58.2 58.2 0 0 1 .2 4c0 .4 0 1-.2 1.6Zm-.3-7.5h4.7a10.1 10.1 0 0 0-7-5.6c.6.8 1 1.6 1.4 2.5l1 3.1Zm-7.9 0h6a12.2 12.2 0 0 0-3-6c-.7.7-1.3 1.4-1.7 2.3-.5 1.2-1 2.4-1.3 3.7Zm-6.6 0h4.7a17.6 17.6 0 0 1 2.2-5.6 10.3 10.3 0 0 0-7 5.6Z"/>
+	</symbol>
+	<use xlink:href="#globe" width="25" height="25" x="0" y="100"/>
+	<view id="globe-view" viewBox="0 100 25 25"/>
+</svg>
+```
+Every icon is wrapped by a `<symbol>` tag and has an id.
+
+## &lt;use&gt; in HTML
+
+The *index.html* file looks like that
+```html
+<svg width="24" height="24" style="--color-icon: blue">
+    <title>Search</title>
+    <use href="sprite.svg#search"></use>
+</svg>
+```
+In an `<svg>` element, I can reference indiviual icons by the filename followed by a hash character and it's id. The accessible name is within `<title>` tags. While the svgs content lives in a Shadow DOM and is thus isolated from the rest of the page, CSS custom properties can 'pierce through' that boundary. I set `--color-icon` in the HTML and it's consumed by the stroke of the search icon and the fill of the globe icon. If the variable is not present in the HTML the fallback value `white` after the colon is used.
+
+## mask: url() in CSS
+
+Before we can reference the SVG in CSS, we need to create SVG Fragment Identifiers. This is done once again with the `<use>` tag, this time in the SVG file itself. The `y=""` coordinate differs, so the icons are not stacked above each other. A `<view>` crops out exactly that part of the svg using the viewbox attribute. This has a different id — I use the suffix *-view*. And that one we reference in the *style.css*.
+
+```css
+.search-button::before {
+	--color-icon: red;
+  content: "";
+  background-color: var(--color-icon);
+  -webkit-mask: url("sprite.svg#search-view");
+  mask: url("sprite.svg#search-view");
+  width: 2rem;
+  height: 2rem;
+}
+```
+The HTML Fragment can't be reached by our CSS custom properties, so instead we use our color as the `background-color` of the pseudo element. This plain background is then cut out with the SVG Fragnent using the CSS `mask-image` property. Despite it's good [browser support](https://caniuse.com/?search=mask-image), you still need to also provide the `-webkit`-prefixed version for Chromium.
+
+## References
+
+- [Chris Coyier: How SVG Fragment Identifiers Work](https://css-tricks.com/svg-fragment-identifiers-work/)
+- [Sara Soueidan: Styling SVG &lt;use&gt; Content with CSS](https://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css/)
+- [Jenn Hi: Using SVG Symbols as CSS Backgrounds](https://codepen.io/jennhi/post/using-svg-symbols-as-css-backgrounds)
