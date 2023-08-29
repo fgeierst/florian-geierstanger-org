@@ -1,6 +1,7 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import heroImage from '../assets/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg';
 export const frontmatter = {
 	title: "Biografie",
 	lang: "de"
@@ -9,7 +10,7 @@ export const frontmatter = {
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
 	<figure class="layout-grid">
 		<Image 
-			src={import('/src/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg')} 
+			src={heroImage} 
 			width={835} 
 			height={470}
 			format="webp"
