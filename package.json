@@ -9,13 +9,13 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "1.1.1",
-    "@astrojs/sitemap": "^3.0.1",
+    "@astrojs/sitemap": "^3.0.3",
     "@astrojs/svelte": "4.0.3",
     "astro": "3.2.3",
-    "sass": "^1.69.0",
-    "svelte": "^4.2.1"
+    "sass": "^1.69.5",
+    "svelte": "^4.2.8"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.0"
+    "@vercel/analytics": "^1.1.1"
   }
 }
