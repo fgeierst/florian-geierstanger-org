@@ -1,0 +1,23 @@
+---
+title: "TYPO3 Fluid Component end-to-end testing with Playwright."
+description: ""
+publishDate: "2023-07-07"
+layout: "../../layouts/PostLayout.astro"
+lang: "en"
+---
+
+![Diagram showing how a counter component is populated with fixture data and displayed in the styleguide. A corresponding test clicks on the button and expects the counter to be incremented by one.](../../assets/images/fluid-components-e2e-testing.png)
+
+This is my setup to programmatically test TYPO3 frontend code. It uses Playwright to run end-to-end tests on individual Fluid Components. To be able to test the components in isolation, I use Fluid Styleguide's fixture files to populate the component with mockup data.
+
+As an extra step, Axe-core is used as an plugin within Playwright to do automated accessibility testing.
+
+Playwright runs it's test using headless Chromium, Webkit and Firefox browsers. For me this turned out especially usefull after updating NPM dependencies: `npx taze major -w && ddev npm i && npx playwright test`.
+
+## References
+
+- https://github.com/sitegeist/fluid-components
+- https://github.com/sitegeist/fluid-styleguide
+- https://github.com/microsoft/playwright
+- https://playwright.dev/docs/accessibility-testing
+- https://github.com/antfu/taze
