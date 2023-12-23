@@ -1,4 +1,3 @@
-![](tag>Science-Fiction Documentary)
 
 # Eyes on me
 

@@ -1,4 +1,3 @@
-![](tag>Descripción)
 
 # Transgresiones
 

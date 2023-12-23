@@ -1,15 +1,17 @@
-# Dokumentarfilme
+---
+title: 'Dokumentarfilme'
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
+
+- 2019-2020 [Lernhausfilm](https://lernhausfilm.de/) — Dokumentarische Webserie und Podcast über das Münchner Lernhauskonzept
+- 2018-21 Zeitzeugen-Interviews zur Ortsgeschichte des Marktes Oberstdorf (zweite Drehphase)
 
   
-===== Aktuell =====
+## Filme 
 
-- 2020 [Lernhausfilm](http://lernhausfilm.de/) — Dokumentarische Webserie und Podcast über das Münchner Lernhauskonzept
-- 2018ff Zeitzeugen-Interviews zur Ortsgeschichte des Marktes Oberstdorf (zweite Drehphase)
-
-  
-===== Filme =====
-
-- 2013 [Filmkopierwerk](Filmkopierwerk) Dokumentarfilm
+- 2013 [Filmkopierwerk](filmkopierwerk) Dokumentarfilm
 - 2010 [Joe](parfuem) Dokumentarfilm, 20min, Underdox Filmfestival
 - 2009 [Augen schauen mich an](augen) Science-Fiction-Dokumentarfilm, 22min
 - 2009 [What you did in my head](paulus) Videoinstallation, Katholische Akademie München
@@ -19,9 +21,9 @@
 
   
 
-### Mitarbeit
+## Mitarbeit
 
-- 2020f [Digital Dignity](https://www.fordigitaldignity.com/) — Interactive documentary project on nationalism and social media in India (R: Prof. Sahana Udupa, Media Anthropology and Digital Studies, LMU Munich)
+- 2020-2021 [Digital Dignity](https://www.fordigitaldignity.com/) — Interactive documentary project on nationalism and social media in India (R: Prof. Sahana Udupa, Media Anthropology and Digital Studies, LMU Munich)
 - 2019 [Paju - Die innere Teilung](http://www.mandarinenfilm.de/paju.html), Regie: Susanne Mi-Son Quester, Produzenten: Susanne Mi-Son Quester, Florian Geierstanger
 - 2013 [S T R A U B](http://gs.udk-berlin.de/stipendiaten/stefan-hayn/), R: Stefan Hayn, als: Kameraassistent, Licht
 - 2013 [Meroë, Von Elefantengöttern und Löwentempeln](http://www.swr.de/schaetze-der-welt/meroe-schaetze-der-welt-sudan/-/id=5355190/nid=5355190/did=10697906/mpdid=10712992/1ce4lsm/index.html), Sendereihe Schätze der Welt, SWR, R: Rüdiger Lorenz, als: Bildgestalter
@@ -38,7 +40,7 @@
 
   
 
-### Weitere Filmprojekte
+## Weitere Filmprojekte
 
 - 2009 [Tanger](Tanger) Recherche, Sevilla / Spanien, Tanger / Marokko
 - 2007 [welttheater](welttheater) Dokumentarfilmprojekt, Oberstdorf, Fraisse / Frankreich

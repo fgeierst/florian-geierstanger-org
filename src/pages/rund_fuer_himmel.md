@@ -1,3 +1,8 @@
+---
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
 # Rund für Himmel, eckig für Erde
 
 <img src="/projekte/vietnam_banhchung.jpg" data-query="?800&amp;nolink" width="800" alt="Rund für Himmel, eckig für Erde" />

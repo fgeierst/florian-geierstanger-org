@@ -1,3 +1,8 @@
+---
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
 <style>
 .logos ul {
   list-style-type:none !important;

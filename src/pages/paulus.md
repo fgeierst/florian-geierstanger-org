@@ -1,3 +1,8 @@
+---
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
 # What you did in my head
 
 <img src="/projekte/2009paulus/2010/plakat_paulus1.jpg" data-query="?800&amp;direct" width="800" alt="What you did in my head" />

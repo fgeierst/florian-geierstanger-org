@@ -1,3 +1,8 @@
+---
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
 # Joe
 
 <img src="/projekte/2009parfuem/joe_schaufenster.jpg" data-query="?600&amp;nolink" width="600" alt="Joe" />

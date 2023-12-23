@@ -1,4 +1,3 @@
-![](tag>Documentary_film)
 
 # My Way
 

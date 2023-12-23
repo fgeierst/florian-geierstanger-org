@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import "../styles/style.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -36,7 +35,6 @@ const siteTitle = "Florian Geierstanger";
         font-display: swap;
       }
     </style>
-    <ViewTransitions transition:animate="none" />
   </head>
   <body>
     <div class="layout-grid">
@@ -58,10 +56,6 @@ const siteTitle = "Florian Geierstanger";
       </footer>
     </div>
 
-    <script>
-      import { inject } from "@vercel/analytics";
-      inject();
-    </script>
     <style lang="scss" is:global>
       .layout-grid {
         .site-title {
@@ -93,6 +87,19 @@ const siteTitle = "Florian Geierstanger";
         .description {
           font-size: 1.25em;
           font-weight: 350;
+        }
+
+        figure {
+          margin-block-end: var(--space-200);
+
+          > img {
+            width: 100%;
+            grid-column: widecontent;
+            margin-block-end: var(--space-50);
+          }
+          > figcaption {
+            grid-column: textcontent;
+          }
         }
       }
     </style>

@@ -1,0 +1,24 @@
+---
+title: "Filmprogramme"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
+---
+
+import { Image } from "astro:assets";
+import hero from "../assets/projekte/2016kinoauge/dokka_festival_filmgespraech_mit_micha_hedinger2014_23.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Filmgespräch mit Mischa Hedinger, DokKa 2014"
+  />
+  <figcaption>Filmgespräch mit Mischa Hedinger, DokKa 2014</figcaption>
+</figure>
+
+- 2010-2015 [UNDERDOX – Filmfestival für Dokument und Experiment](http://www.underdox-festival.de/)
+- 2013-2019 [DOK.fest München](http://www.dokfest-muenchen.de/) Kinder- und Jugendsektion "DOK.education"
+- 2014 [DokKa Dokumentarfestival Karlsruhe](http://www.dokka.de)
+- 2014-2016 [Dokumentarfilmreihe Kino-Auge](kinoauge), Glockenbachwerkstatt München
+- Seit 2016 [dok im Lihotzky](https://www.wagnis.org/projekte/realisierte-projekte/wagnisart.html), wagnisART, München

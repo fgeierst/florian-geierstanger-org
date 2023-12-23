@@ -1,4 +1,3 @@
-![](tag>poema)
 
 # De Tomates
 

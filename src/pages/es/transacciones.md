@@ -1,4 +1,3 @@
-![](tag>Pelicula_documental)
 
 # Transacciones
 

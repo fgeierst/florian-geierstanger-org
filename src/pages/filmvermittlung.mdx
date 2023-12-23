@@ -1,8 +1,21 @@
-# Filmvermittlung — Dokumentarfilm, Experimentarfilm, Videoessay und Digital Media
+---
+title: "Filmvermittlung — Dokumentarfilm, Experimentarfilm und Videoessay"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
+---
 
-<img src="/projekte/2017filmvermittlung/geierstanger_dokeducation2017_img_5102.jpg" data-query="?nolink&amp;700x467" width="700" height="467" /> //Grundschulklassen im Kino, DOK.fest München //
+import { Image } from "astro:assets";
+import hero from "../assets/projekte/2017filmvermittlung/geierstanger_dokeducation2017_img_5102.jpg";
 
-![](page>referenzen)
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Grundschulklassen im Kino, DOK.fest München"
+  />
+  <figcaption>Grundschulklassen im Kino, DOK.fest München</figcaption>
+</figure>
 
 ## Termine 2020
 
@@ -30,7 +43,9 @@
 ## Termine 2017
 
 - [Videoessays für Youtube machen - Filmblogger](https://archiv.filmtage.pschwind.de/2017/programm/workshops), Workshop für SchülerInnen, 40. Filmtage Bayerischer Schulen, Gerbrunn, 14.10.2017
-- <embed src="/projekte/2012filmvermittlung/filmbildunghessen2017.pdf" class="align-center" />, Lehrerfortbildungen für hessische Lehrkräfte, Deutsches Filminstitut/Hessische Lehrkräfteakademie, Sept/Okt. 2017
+
+- ["Dokumentarisch Arbeiten"](/assets/filmbildunghessen2017.pdf), Lehrerfortbildungen für hessische Lehrkräfte, Deutsches Filminstitut/Hessische
+  Lehrkräfteakademie, Sept/Okt. 2017
 - [DOK.education Dokumentarfilmschule](https://www.dokfest-muenchen.de/Dokumentarfilmschule), DOK.fest München, 3. - 13.5.2017
 - Videographie (Seminar), Universität Passau, SoSe 2017
 - Medienkompetenz für die Grundschule, Lehrerfortbildung, 8.3.2017, Pädagogisches Institut München
@@ -62,8 +77,8 @@
 
 ## Termine 2013
 
-- 6.6.2013 Lehrerfortbildung !["Filmproduktion in der Schule"](http://florian.geierstanger.org/_media/projekte/2012filmvermittlung/filmproduktion_in_der_schule_modulare_reihe_pimuenchen2013.pdf), [Pädagogisches Institut](http://www.pi-muenchen.de/onlineprogramm/kurs_blatt.php?a_programm_nr=69-DC0.01&a_ku_verw_von_ku_liste=&a_com_v_suchen=J&a_ku_jahr=2013), München
-- 13\. - 15.5.2013 !["Dokumentarfilmschule"](/projekte/2012filmvermittlung/dok.education_programmheft_2013_.pdf), [DOK.fest München](http://www.dokfest-muenchen.de/node/1281)
+- 6.6.2013 Lehrerfortbildung ["Filmproduktion in der Schule"](/assets/filmproduktion_in_der_schule_modulare_reihe_pimuenchen2013.pdf), [Pädagogisches Institut](http://www.pi-muenchen.de/onlineprogramm/kurs_blatt.php?a_programm_nr=69-DC0.01&a_ku_verw_von_ku_liste=&a_com_v_suchen=J&a_ku_jahr=2013), München
+- 13\. - 15.5.2013 ["Dokumentarfilmschule"](/assets/dok.education_programmheft_2013_.pdf), [DOK.fest München](http://www.dokfest-muenchen.de/node/1281)
 - 21.3.2013, Pädagogisches Institut München, [Lehrerfortbildung: Filmanalyse für die Unter- und Mittelstufe](https://www.facebook.com/events/457559520981129/)
 - 24\. - 31.3.2013 Experimentalfilm-Workshop, [Drehort Schule e. V.](http://drehort-schule.de/)
 - 11\. - 14.2.2013 Dokumentarfilm-Workshop für Jugendliche, [KJR München-Stadt](http://www.kjr-m.de/) / [DOK.fest](http://www.dokfest-muenchen.de/node/1281). ([Fotos](http://www.facebook.com/media/set/?set=a.447411991995224.93761.130450403691386&type=3))

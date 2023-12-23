@@ -1,4 +1,3 @@
-![](tag>Filmbeschreibung)
 
 # My Way
 

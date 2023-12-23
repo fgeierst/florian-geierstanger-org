@@ -1,3 +1,8 @@
+---
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
 # My Way
 
 *»Weil alles andere ist das Starfighter-Syndrom. Jetzt hat der einen Mercedes, jetzt will der einen Ferrari, hat der einen Ferrari, dann will der – was weiß ich – ein Schiff. Und das ist nicht meine Philosophie.«*

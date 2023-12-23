@@ -1,3 +1,8 @@
+---
+layout: '../layouts/BaseLayout.astro'
+lang: 'de'
+---
+
 # Oberstdorf im frühen 20. Jahrhundert
 
 Die Interviews sind in Publikationen von Angelika Patel eingeflossen.
