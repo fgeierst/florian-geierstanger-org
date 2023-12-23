@@ -1,0 +1,32 @@
+# Eberhard Doser
+
+<img src="/projekte/2007welttheater/zeichnung_operettenhafter_auftakt1600px.jpg" data-query="?600&amp;direct" width="600" alt="Operettenhafter Auftakt" />
+
+### Biographie
+
+- 24.4.1926 geboren in Oberstdorf-Gerstruben, aufgewachsen in Mannheim.
+- 1946-54 Studium der Bildenden Kunst in Bad Reichenhall, München, Mannheim und Salzburg bei Pilsch, Rabenbauer, Berger-Bergner, Trummer, Palitsch und Kokoschka.
+- 1954 erste Ausstellung in Mannheim, die zweite 1956 in Heidelberg.
+- 1955-56 „Springwerk Enthousiasme", Gemälde mit mobilen Teilen.
+- 1956-72 Niederlassung in Paris als freischaffender Maler, Atelier in der 287 rue St. Jacques.
+- 1957 Beginn mit „Akustischer Malerei", der Realisierung synästhetischer Absichten, indem der Künstler eine Skala füt Farbtöne mit einer gleichlaufenden für Töne der Musik zu entwickeln begann. Parallel dazu lebenslang plastische Objekte, vorwiegend aus Sperrholz, Zement und Materialkombinationen.
+- 1958 „Die roten Türme", Traumgemälde mit danach komponierten elektronischen Klängen in Zusammenarbeit mit dem technischen Leiter des Studios für elektronische Musik der Musikhochschule Köln, Gerhard Rautenbach.
+- 1959 "Farbtonwerk I und II" zwei Gemälde mit hörbarer Partitur mittels automatischem Piano, weitere Werke dieser Art bis 1996. Im Atelier des Künstlers erste öffentl. Präsentation der „Akustischen Malerei“ mit einer kunsthistorischen Ein­führung durch Prof. F. S. Würtenberger.
+- 1960 Verbesserung der Pariser Farbtonleiter mit Hary Kreuziger.
+- 1962 „Apokalypse Offenbarung Johannes", 12-Tafel-Gemälde mystischen Inhalts.
+- 1968 Ausst. im Rathaus des 1. Arrondissements von Paris während der 68er Revolte.
+- 1969 Ausst. im Centre Culturelle in Brüssel.
+- 1970 „Psalm 114", das Übertragen der gleichnamigen musikalischen Partitur von Maurice Benhamou über eine optische Partitur und Teilbilder in ein Gesamtgemälde. Beteiligung beim Festival Montparnasse / Paris. Ausst. in d. Pariser Gal. Fischbacher.
+- Seit 72 Niederlassung im südfranz. Bergdorf Fraisse / Viane (Tarne). Dort Gründung der Kulturstätte „Maison Atelier" mit Ausstellungen verschiedener Künstler, Kunstak­tionen in der Umgebung sowie Kunstbasis-Schule „Le Regard". Während dessen Ausstellungen in Castres (Musée Goya), Schwetzingen, Albi (Palais de la Berbie), Frankenthal, Paris (Place Vendöme Festival), Bochum, Verfeil, Bensheim, Lavaur, Labruguiere, Sainte-Livrade (La Semaine de l'Europe), Paris (FIAP), Selongey (Academie de Champs Soleil), Essen (Villa Wiese), Karlsruhe (Evang. Stadtkirche), Stuttgart (Interart), Oberstdorf (Altes Rathaus, Meisterkurse Villa Jauss).
+- 1994 „Kreator und Kreatur", eine Performance mit Antimaschine, Künstlerdouble, Künstler u. Gehilfen
+- Seit 1996 Arbeit am Monumentalgemälde "[Oberstdorf im Welttheater](/welttheater)"
+- 13.5.2018 verstorben in Fraisse.
+
+  
+==== Publikationen ====
+
+- [Atelierbesuch bei Eberhard Doser Schwetzingen](https://www.ardmediathek.de/video/swr-retro-von-rhein-main-und-neckar/atelierbesuch-bei-eberhard-doser-schwetzingen/swrfernsehen-de/Y3JpZDovL3N3ci5kZS9hZXgvbzExNjA1NDc/), Video s/w 3 Min, SWR, 18.8.1956
+- "Der Artiste-Peintre-Acoustique Eberhard Doser, Franz Sepp Würtenberger, 1990
+- "Eberhard Doser: Peintre Allemand En Pays Castrais", Gaston-Louis Marchal, Musé Goya, 1991, ISBN: 9782904401244
+- ["Oberstdorf im Welttheater - ein Werk des Malers Eberhard Doser"](https://www.verschoenerungsverein-oberstdorf.de/unser-oberstdorf/heft-51/oberstdorf-welttheater-ein-werk-malers-eberhard-doser.html), Hans Schraudolf, in: Unser Oberstdorf, Heft 51, 2007, Seite 1933
+- ["Eberhard Doser – Zum 90. Geburtstag des in Gerstruben geborenen Malers"](https://www.verschoenerungsverein-oberstdorf.de/unser-oberstdorf/heft-69/eberhard-doser-zum-90-geburtstag-gerstruben-geborenen-malers.html), Wilhelm Geierstanger, in: Unser Oberstdorf, Heft 69, 01.12.2016

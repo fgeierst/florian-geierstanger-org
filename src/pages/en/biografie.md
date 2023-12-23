@@ -1,0 +1,3 @@
+# Biography
+
+Florian Geierstanger is a frontend web developer and documentary filmmaker. He studied at Academy of Fine Arts Munich, Karlsruhe University of Arts and Design (ZKM) and at University of Television and Film Munich. 2010–2015 he curated film programs for UNDERDOX – Filmfestival for document and experiment. He does teachers training in new media and filmworkshops for children. 2014–2017 he taught video courses at the University of Passau. 2016 he was an instructor for two-weeks video art seminar at the Neuburg Summer Academy. Since 2014 he has been a media educator for DOK.education / DOK.fest Munich. His current documentary project is a webseries and podcast about transformatory school architecture.
