@@ -10,7 +10,7 @@ let {
   date,
   lang = "de",
   description,
-} = Astro.props;
+} = Astro.props.frontmatter || Astro.props;
 const siteTitle = "Florian Geierstanger";
 ---
 
@@ -36,7 +36,7 @@ const siteTitle = "Florian Geierstanger";
         font-display: swap;
       }
     </style>
-    <ViewTransitions />
+    <ViewTransitions transition:animate="none" />
   </head>
   <body>
     <div class="layout-grid">
@@ -57,6 +57,11 @@ const siteTitle = "Florian Geierstanger";
         <Footer />
       </footer>
     </div>
+
+    <script>
+      import { inject } from "@vercel/analytics";
+      inject();
+    </script>
     <style lang="scss" is:global>
       .layout-grid {
         .site-title {

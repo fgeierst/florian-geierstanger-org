@@ -1,15 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const {content} = Astro.props;
+import BaseLayout from "../layouts/BaseLayout.astro";
+const { content } = Astro.props;
 const date = new Date(content.publishDate);
-const localDate = date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' });
+const localDate = date.toLocaleDateString("de-DE", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
-<BaseLayout 
-  title={content.title} 
-  date={localDate} 
-  lang={content.lang} 
-  description={content.description} 
+<BaseLayout
+  title={content.title}
+  date={localDate}
+  lang={content.lang}
+  description={content.description}
 >
   <slot />
 </BaseLayout>
