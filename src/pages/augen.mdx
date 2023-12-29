@@ -5,13 +5,10 @@ lang: "de"
 ---
 
 import Blockquote from "../components/Blockquote.astro";
+import { Image } from "astro:assets";
+import hero from "../assets/plakat_augen_02.jpg";
 
-<img
-  src="/projekte/2009verwandlungen/plakat_augen_02.jpg"
-  data-query="?300&amp;direct"
-  width="300"
-  alt="Science-Fiction-Dokumentarfilm"
-/>
+<Image src={hero} width="600" alt="Science-Fiction-Dokumentarfilm" />
 
 <Blockquote author="Sebastian Markt">
   Augen schauen mich an schafft einen filmischen Raum in dem sich
@@ -20,9 +17,11 @@ import Blockquote from "../components/Blockquote.astro";
   Weise ins Bild gesetzt, fügen sich zu einem vielschichtigen Gewebe aus
   Sichtbarkeiten.
 </Blockquote>
-Buch, Regie, Montage: Florian Geierstanger Kamera: Benedikt Muckenthaler, Georg Haslauer
-Ton: Christian Rabl, Claudia Schmid, Sylvia Schlums, Florian Baumgartner Unterstützung:
-Fam. Timmer, Susanne Schranner, Gabi Lainer, Fam. Jaud, Sandra Hauser, Andreas Wittmann
-Gedreht im Juni / Juli 2009 in Landshut und Martinsried Filmlänge: 22min
 
+- Buch, Regie, Montage: Florian Geierstanger
+- Kamera: Benedikt Muckenthaler, Georg Haslauer
+- Ton: Christian Rabl, Claudia Schmid, Sylvia Schlums, Florian Baumgartner
+- Unterstützung: Fam. Timmer, Susanne Schranner, Gabi Lainer, Fam. Jaud, Sandra Hauser, Andreas Wittmann
+- Gedreht im Juni / Juli 2009 in Landshut und Martinsried
+- Filmlänge: 22min
 - Ausstellung: Akademie der Bildenden Künste, München / [black or white](/assets/2009_blackorwhite_einladungskarte.pdf) / 17. bis 26. Juli 2009
