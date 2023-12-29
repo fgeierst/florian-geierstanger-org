@@ -7,28 +7,23 @@
 // grid-column: textcontent; //  640px
 
 :root {
-	--grid-margin: var(--space-100);
+  --grid-margin: var(--space-100);
   --grid-expansion: 160px;
   --grid-textcontent: 640px;
 
-  --grid:
-    [fullwidth-start] var(--grid-margin)
-    [maxcontent-start widecontent-start textcontent-start]
-    1fr
-    [textcontent-end widecontent-end maxcontent-end]
-    var(--grid-margin) [fullwidth-end];
+  --grid: [fullwidth-start] var(--grid-margin) [maxcontent-start
+    widecontent-start textcontent-start] 1fr [textcontent-end widecontent-end
+    maxcontent-end] var(--grid-margin) [fullwidth-end];
 
   @media (min-width: 720px) {
     // grid-margin + textcontent + grid-margin + scrollbar (~15px)
-		--grid:
-      [fullwidth-start] minmax(var(--grid-margin), 1fr)
-      [maxcontent-start] minmax(0, var(--grid-expansion))
-      [widecontent-start] minmax(0, var(--grid-expansion))
-      [textcontent-start] var(--grid-textcontent) [textcontent-end]
-      minmax(0, var(--grid-expansion)) [widecontent-end]
-      minmax(0, var(--grid-expansion)) [maxcontent-end]
+    --grid: [fullwidth-start] minmax(var(--grid-margin), 1fr) [maxcontent-start]
+      minmax(0, var(--grid-expansion)) [widecontent-start]
+      minmax(0, var(--grid-expansion)) [textcontent-start]
+      var(--grid-textcontent) [textcontent-end] minmax(0, var(--grid-expansion))
+      [widecontent-end] minmax(0, var(--grid-expansion)) [maxcontent-end]
       minmax(var(--grid-margin), 1fr) [fullwidth-end];
-	}
+  }
 }
 
 .layout-grid {
@@ -37,6 +32,19 @@
   grid-template-columns: var(--grid);
   > * {
     grid-column: fullwidth;
+  }
+
+  figure {
+    margin-block-end: var(--space-200);
+
+    > img {
+      width: 100%;
+      grid-column: widecontent;
+      margin-block-end: var(--space-50);
+    }
+    > figcaption {
+      grid-column: textcontent;
+    }
   }
 }
 
