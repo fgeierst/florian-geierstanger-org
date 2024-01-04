@@ -1,6 +1,5 @@
 {
   "name": "florian.geierstanger.org",
-  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -9,8 +8,6 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^2.0.3",
-    "@astrojs/sitemap": "^3.0.4",
-    "@astrojs/svelte": "^5.0.3",
     "astro": "^4.1.0",
     "sass": "^1.69.7"
   }
