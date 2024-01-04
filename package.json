@@ -11,8 +11,8 @@
     "@astrojs/mdx": "^2.0.3",
     "@astrojs/sitemap": "^3.0.4",
     "@astrojs/svelte": "^5.0.3",
-    "astro": "^4.0.8",
-    "sass": "^1.69.6",
+    "astro": "^4.0.9",
+    "sass": "^1.69.7",
     "svelte": "^4.2.8"
   }
 }
