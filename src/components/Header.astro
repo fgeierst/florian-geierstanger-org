@@ -1,6 +1,4 @@
 ---
-const pathname = Astro.url.pathname;
-
 const navItems = [
   {
     id: "/",
@@ -34,12 +32,17 @@ const navItems = [
   <ul class="nav__list">
     {
       navItems.map((item) => (
-        <li
-          class={`nav__item ${pathname == item.id ? "nav__item--active" : ""} ${
-            item.additionalStyles
-          }`}
-        >
-          <a class="nav__link" href={`${item.id}`} data-pathname={pathname}>
+        <li class={`nav__item ${item.additionalStyles}`}>
+          <a
+            class="nav__link"
+            href={`${item.id}`}
+            aria-current={
+              Astro.url.pathname === item.id ||
+              Astro.url.pathname === `${item.id}/`
+                ? "page"
+                : undefined
+            }
+          >
             {item.title}
           </a>
         </li>
@@ -66,10 +69,6 @@ const navItems = [
     &__item {
       margin-block-end: unset;
 
-      &--active a {
-        text-decoration: underline;
-      }
-
       &--site-title {
         @media (min-width: 900px) {
           flex-grow: 1;
@@ -79,6 +78,10 @@ const navItems = [
 
     &__link {
       text-decoration: none;
+
+      &[aria-current="page"] {
+        text-decoration: underline;
+      }
 
       &:hover {
         text-decoration: underline;
