@@ -1,22 +1,21 @@
 <nav>
-	<ul>
-		<li><a href="/sitemap/">Sitemap</a></li>
-		<li><a href="/datenschutz/">Datenschutz</a></li>
-	</ul>
+  <ul>
+    <li><a href="/sitemap/">Sitemap</a></li>
+    <li><a href="/datenschutz/">Datenschutz</a></li>
+  </ul>
 </nav>
 
 <style lang="scss">
-	nav {
-
+  nav {
     &::before {
       content: "";
       display: block;
       height: 4px;
       width: var(--space-200);
-      background-color: hsl(0, 0%, 20%);
+      background-color: var(--color-text);
       margin-block-end: var(--space-50);
     }
-	}
+  }
 
   ul {
     display: flex;
