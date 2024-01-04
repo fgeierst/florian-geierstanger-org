@@ -1,13 +1,13 @@
 ---
-title: 'TYPO3 Quick Installation Guide '
-description: 'The famous five minutes installation using using DDEV, Composer and Sitepackagebuilder.'
-publishDate: '2022-08-20'
-updatedDate: '2022-08-22'
-layout: '../../layouts/PostLayout.astro'
-lang: 'en'
+title: "TYPO3 Quick Installation Guide "
+description: "The famous five minutes installation using using DDEV, Composer and Sitepackagebuilder."
+publishDate: "2022-08-20"
+updatedDate: "2022-08-22"
+layout: "../../layouts/PostLayout.astro"
+lang: "en"
 ---
 
-import Feedback from '../../components/Feedback.astro'
+import Feedback from "../../components/Feedback.astro";
 
 ## Prerequisites
 
@@ -15,9 +15,9 @@ Install [Docker Desktop and DDEV Local](https://ddev.readthedocs.io/en/stable/us
 
 Start Docker Desktop from the command line with `open -a Docker` (macOS).
 
+## Make a new directory for your project
 
-## Make a new directory for your project 
-(for example in the folder *~/Projects/*)  
+(for example in the folder _~/Projects/_)
 
 ```shell
 mkdir my-new-project
@@ -34,72 +34,72 @@ ddev composer create --no-install "typo3/cms-base-distribution:^11.5"
 ddev composer install
 ddev typo3cms install:setup
 ```
-- When prompted, you may use these conventions for local development  
-  - username: `admin`  
-  - password: `password`  
-- When prompted to *Specify the site setup type*, select `site`  
+
+- When prompted, you may use these conventions for local development
+  - username: `admin`
+  - password: `password`
+- When prompted to _Specify the site setup type_, select `site`
 
 ## Create a folder for local composer packages and configure Composer accordingly
 
 ```bash
-mkdir -p packages 
+mkdir -p packages
 ddev composer config repositories.local path "packages/*"
 ```
+
 ## Create a new base package
 
 - Go to [sitepackagebuilder.com](https://www.sitepackagebuilder.com/new/)
-- Select *Fluid Styled Content* as a base package  
-- Company and title fields will be used to generate namespace and package name, so you might want to keep these rather short  
-- Add ` base` to the end of your title (for example `my new project base`) to indicate this is your basepackage.  
-- Create new folder `mkdir packages`  
-- Download the and extract the .zip file and copy the folder to /packages/  
-  
+- Select _Fluid Styled Content_ as a base package
+- Company and title fields will be used to generate namespace and package name, so you might want to keep these rather short
+- Add ` base` to the end of your title (for example `my new project base`) to indicate this is your basepackage.
+- Create new folder `mkdir packages`
+- Download the and extract the .zip file and copy the folder to /packages/
+
 ## Give the base package a version number
 
-Open */packages/my_new_project_base/composer.json* in your code editor and add a new entry for the version:
- 
+Open _/packages/my_new_project_base/composer.json_ in your code editor and add a new entry for the version:
+
 ```json
 {
-	"name": "my-company/my-new-project-base",
-	"version": "0.0.1",
+  "name": "my-company/my-new-project-base",
+  "version": "0.0.1"
 }
 ```
 
 ## Require the new base package with composer
 
 Use name and version from above:
- 
+
 ```bash
 ddev composer require my-company/my-new-project-base:^0.0.1
 ```
 
-## Import setup and configuration typoscript from your base package  
+## Import setup and configuration typoscript from your base package
 
-Open the TYPO3 backend in your browser  
+Open the TYPO3 backend in your browser
 
 ```shell
 ddev launch typo3
 ```
 
-- Open the Template module  
-- In the pagetree, select the rootpage ("Home", globe icon)  
-- Open the *Info/modify* pane  
-- Click in the *Edit the whole template record* button  
-- Under *Constants* add this line  
-  
-```typoscript
+- Open the Template module
+- In the pagetree, select the rootpage ("Home", globe icon)
+- Open the _Info/modify_ pane
+- Click in the _Edit the whole template record_ button
+- Under _Constants_ add this line
+
+```
 @import 'EXT:my_new_project_base/Configuration/TypoScript/constants.typoscript'
 ```
 
-- Under *Setup*, remove the existing typoscript code and replace it with  
+- Under _Setup_, remove the existing typoscript code and replace it with
 
-```typoscript
+```
 @import 'EXT:my_new_project_base/Configuration/TypoScript/setup.typoscript'
 ```
 
 Done!
-
-
 
 ## Background
 
@@ -108,5 +108,6 @@ As a frontend developer setting up new projects is not my day to day business. H
 Shout out to Korbinian Kugelmann, Sebastian Hofer and [Eric Bode](https://twitter.com/ErHaWeb/status/1561668711383240704).
 
 <Feedback>
-	Any feedback or improvements are welcome. The goal here is to make this as beginner friendly as possible.
+  Any feedback or improvements are welcome. The goal here is to make this as
+  beginner friendly as possible.
 </Feedback>
