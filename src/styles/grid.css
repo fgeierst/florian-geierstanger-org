@@ -45,9 +45,13 @@
     }
   }
 
-  &.video {
-    grid-column: maxcontent;
+  & .video {
     margin-block: var(--space-200) var(--space-200);
+    grid-column: fullwidth !important;
+
+    @media (width > 720px) {
+      grid-column: widecontent !important;
+    }
 
     & > video {
       width: 100%;
