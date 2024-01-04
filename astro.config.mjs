@@ -10,4 +10,7 @@ export default defineConfig({
   },
   site: "https://florian.geierstanger.org",
   integrations: [mdx()],
+  build: {
+    inlineStylesheets: "never",
+  },
 });

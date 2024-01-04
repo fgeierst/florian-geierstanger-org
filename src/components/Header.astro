@@ -28,12 +28,11 @@ const navItems = [
 ---
 
 <nav>
-  <ul class="nav__list">
+  <ul>
     {
       navItems.map((item) => (
-        <li class="nav__item">
+        <li>
           <a
-            class="nav__link"
             href={`${item.id}`}
             aria-current={
               Astro.url.pathname === item.id ||
@@ -50,13 +49,13 @@ const navItems = [
   </ul>
 </nav>
 
-<style lang="scss">
+<style>
   nav {
     margin-block: var(--space-50);
   }
 
   .nav {
-    &__list {
+    ul {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-50) var(--space-200);
@@ -65,7 +64,7 @@ const navItems = [
       padding-inline-start: 0;
     }
 
-    &__item {
+    li {
       margin-block-end: unset;
 
       &:first-child {
@@ -75,7 +74,7 @@ const navItems = [
       }
     }
 
-    &__link {
+    a {
       text-decoration: none;
 
       &:hover {

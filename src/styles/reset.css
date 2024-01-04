@@ -18,7 +18,7 @@ body {
   scrollbar-gutter: stable;
 
   @media (max-width: 600px) {
-    // prevent overflow issues
+    /* prevent overflow issues */
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -28,7 +28,6 @@ body {
 
 body {
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
   margin: 0;
 }
 

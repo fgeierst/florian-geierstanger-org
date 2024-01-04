@@ -14,8 +14,8 @@ While the twelfe column [Bootstrap grid](https://getbootstrap.com/docs/5.0/layou
 ## Features
 Our mobile first grid provides four tracks (fullwidth, max content, wide content, text content), each with it's own start and end grid lines. On small devices, the three content tracks fall into one, only fullwidth track gives you the possiblity to reach out to the page margins. On bigger screens, the distinct tracks provide great variation how to present and distinguish content elements from each other. As this is based on CSS grid, you can mix and match these lines and place for example an image at the far left and the let it stretch across until the end of the text content track.
 
-## Code (SCSS)
-```scss
+## Code (CSS)
+```css
 :root {
   --grid-margin: 16px;
   --grid-expansion: 160px;

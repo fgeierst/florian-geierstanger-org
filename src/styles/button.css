@@ -1,0 +1,8 @@
+.button {
+  display: inline-block;
+  border: 2px solid hsla(var(--hsl-text), 0.5);
+  width: fit-content;
+  border-radius: var(--space-50);
+  padding: var(--space-50);
+  text-decoration: none;
+}
