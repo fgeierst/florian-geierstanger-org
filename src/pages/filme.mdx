@@ -1,13 +1,26 @@
 ---
-title: 'Dokumentarfilme'
-layout: '../layouts/BaseLayout.astro'
-lang: 'de'
+title: "Dokumentarfilme"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
 ---
 
+import { Image } from "astro:assets";
+import hero from "../assets/projekte/lernhaus_still.jpg";
 
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Ein Schüler sitzt in einem großen offenen Raum und schreibt. Hinter ihm auf einem großen gelben Teppich ein Turm aus Holzbausteinen, mit denen er vieleicht gerade noch gespielt hat. In der Tiefe des Raumes weitere SchülerInnen die sich konzentriert beschäftigen."
+  />
+  <figcaption>
+    Architektur und Schulentwicklung. Szene in einem Lernhaus der Grundschule
+    Bauhausplatz (Foto: Franz Kastner)
+  </figcaption>
+</figure>
 
-  
-## Filme 
+## Filme
 
 - 2019-2020 [Lernhausfilm](https://lernhausfilm.de/) — Dokumentarische Webserie und Podcast über das Münchner Lernhauskonzept
 - 2013 [Filmkopierwerk](filmkopierwerk) Dokumentarfilm
@@ -18,8 +31,6 @@ lang: 'de'
 - 2006 [Transgresiones](tijuana) Dokumentarfilm, 35min, Tijuana/San Diego
 - 2005 [Spur](spur) Videoinstallation, 4min, Kunstverein Weiden
 - 2004-21 [Zur Ortsgeschichte des Marktes Oberstdorf](oberstdorf), Zeitzeugen-Interviewprojektdokk
-
-  
 
 ## Mitarbeit
 
@@ -37,8 +48,6 @@ lang: 'de'
 - 2003 [Ambohimanga, Der Hügel der Könige](https://www.swrfernsehen.de/ambohimanga/-/id=2798/did=5982908/nid=2798/4kqgt0/index.html), Sendereihe Schätze der Welt,SWR, R: Rüdiger Lorenz, als: Kameraassistent
 - 2003ff [handwerksvideos.de](http://www.handwerksvideos.de/), Webplattform, P: Rüdiger Lorenz Filmproduktion, als: Webentwickler
 - 2002 [Die Marionettenmacherin](http://www.handwerksvideos.de/marionettenmacherin.htm), Sendereihe Der Letzte seines Standes?, BR, R: Rüdiger Lorenz, als: Kameraassistent
-
-  
 
 ## Weitere Filmprojekte
 
