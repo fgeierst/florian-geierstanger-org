@@ -1,48 +1,51 @@
 ---
-import Search from './Search.svelte'
-const {pathname} = new URL(Astro.request.url);
+const { pathname } = new URL(Astro.request.url);
 
 const navItems = [
-  { 
-    id: '/',
-    title: 'Florian Geierstanger',
-    additionalStyles: 'nav__item--site-title'
+  {
+    id: "/",
+    title: "Florian Geierstanger",
+    additionalStyles: "nav__item--site-title",
   },
-  { 
-    id: '/filme',
-    title: 'Filme'
+  {
+    id: "/filme",
+    title: "Filme",
   },
-  { 
-    id: '/filmvermittlung',
-    title: 'Filmvermittlung'
+  {
+    id: "/filmvermittlung",
+    title: "Filmvermittlung",
   },
-  { 
-    id: '/filmprogramme',
-    title: 'Filmprogramme'
+  {
+    id: "/filmprogramme",
+    title: "Filmprogramme",
   },
-  { 
-    id: '/blog',
-    title: 'Blog'
+  {
+    id: "/blog",
+    title: "Blog",
   },
-  { 
-    id: '/kontakt',
-    title: 'Kontakt'
+  {
+    id: "/kontakt",
+    title: "Kontakt",
   },
 ];
 ---
-<nav>
 
+<nav>
   <ul class="nav__list">
-      {navItems.map((item) => (
-        <li class={`nav__item ${pathname == item.id ? "nav__item--active" : ""} ${item.additionalStyles}`}>
+    {
+      navItems.map((item) => (
+        <li
+          class={`nav__item ${pathname == item.id ? "nav__item--active" : ""} ${
+            item.additionalStyles
+          }`}
+        >
           <a class="nav__link" href={`${item.id}`}>
             {item.title}
           </a>
         </li>
-      ))}
+      ))
+    }
   </ul>
-
-  <Search client:idle/>
 </nav>
 
 <style lang="scss">
