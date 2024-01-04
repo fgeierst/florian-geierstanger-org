@@ -1,5 +1,5 @@
 ---
-const { pathname } = new URL(Astro.request.url);
+const pathname = Astro.url.pathname;
 
 const navItems = [
   {
