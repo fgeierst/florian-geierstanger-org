@@ -8,6 +8,10 @@ const navItems = [
     additionalStyles: "nav__item--site-title",
   },
   {
+    id: "/blog",
+    title: "Blog",
+  },
+  {
     id: "/filme",
     title: "Filme",
   },
@@ -18,10 +22,6 @@ const navItems = [
   {
     id: "/filmprogramme",
     title: "Filmprogramme",
-  },
-  {
-    id: "/blog",
-    title: "Blog",
   },
   {
     id: "/kontakt",
@@ -67,7 +67,7 @@ const navItems = [
       margin-block-end: unset;
 
       &--active a {
-        text-decoration: underline dotted;
+        text-decoration: underline;
       }
 
       &--site-title {
@@ -81,7 +81,7 @@ const navItems = [
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline dotted;
+        text-decoration: underline;
       }
     }
   }

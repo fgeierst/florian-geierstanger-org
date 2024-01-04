@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const title = "Kontakt";
-const lang = "de";
+export const frontmatter = {
+  title: "Kontakt",
+  lang: "de",
+};
 ---
 
-<BaseLayout lang={lang} title={title}>
+<BaseLayout lang={frontmatter.lang} title={frontmatter.title}>
   <p>
     Florian Geierstanger<br />
      Fritz-Winter-Str. 16<br />

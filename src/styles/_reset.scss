@@ -2,7 +2,9 @@
   Reset
   Based on https://www.joshwcomeau.com/css/custom-css-reset/
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -10,8 +12,10 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
+  scrollbar-gutter: stable;
 
   @media (max-width: 600px) {
     // prevent overflow issues
@@ -28,7 +32,10 @@ body {
   margin: 0;
 }
 
-picture, video, canvas, svg {
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -43,28 +50,29 @@ figcaption {
   font-style: italic;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
   background-color: inherit;
   color: inherit;
   border-color: var(--color-text);
 }
 
-p, h1, h2, h3, h4, h5, h6, ul, ol {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
   overflow-wrap: break-word;
   margin-block-end: var(--space-100);
 }
 
 li {
   margin-block-end: var(--space-100);
-}
-
-.layout-grid .video {
-  grid-column: maxcontent;
-  margin-block: var(--space-200) var(--space-200);
-  
-  > video {
-    width: 100%;
-    height: auto;
-  }
 }

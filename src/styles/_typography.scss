@@ -6,13 +6,14 @@ body {
 
 a {
   color: inherit;
-  text-decoration: underline dotted;
+  text-decoration: underline;
   text-decoration-color: hsla(var(--hsl-text), 0.5);
   text-underline-offset: 0.15em;
 }
 
 p {
   line-height: 1.5;
+  text-wrap: pretty;
 }
 
 h1,
@@ -24,6 +25,7 @@ h5 {
   font-weight: 500;
   margin-block: var(--space-200) var(--space-100);
   line-height: 1.25;
+  text-wrap: balance;
 }
 
 h1 {

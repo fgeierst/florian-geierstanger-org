@@ -5,12 +5,26 @@ export interface Props {
 
 const { post } = Astro.props;
 const date = new Date(post.frontmatter.publishDate);
-const localDate = date.toLocaleDateString('de-DE', { year: 'numeric', month: 'short', day: 'numeric' });
-
+const localDate = date.toLocaleDateString("de-DE", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 ---
+
 <li class="post-preview">
   <a href={post.url}>
-    {post.frontmatter.title} 
-    <span> ({localDate}) </span>
+    {post.frontmatter.title}
+    <span> ({localDate})</span>
   </a>
 </li>
+
+<style>
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+</style>

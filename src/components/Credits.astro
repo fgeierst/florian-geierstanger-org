@@ -1,0 +1,24 @@
+<div class="credits">
+  <h2>Credits</h2>
+  <slot />
+</div>
+
+<style>
+  .credits {
+  }
+
+  .credits :global(ul) {
+    list-style: none;
+    padding-inline: 0;
+  }
+
+  .credits :global(li) {
+    margin-block-end: 0;
+    display: inline;
+
+    &:not(:last-child):after {
+      content: "•";
+      margin-inline: var(--space-50);
+    }
+  }
+</style>

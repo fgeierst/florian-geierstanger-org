@@ -1,11 +1,20 @@
 ---
-layout: '../layouts/BaseLayout.astro'
-lang: 'de'
+title: "Rund für Himmel, eckig für Erde"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
 ---
 
-# Rund für Himmel, eckig für Erde
+import { Image } from "astro:assets";
+import hero from "../assets/projekte/vietnam_banhchung.jpg";
 
-<img src="/projekte/vietnam_banhchung.jpg" data-query="?800&amp;nolink" width="800" alt="Rund für Himmel, eckig für Erde" />
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Rund für Himmel, eckig für Erde"
+  />
+</figure>
 
 Vietnam öffnet sich dem Westen. In den Strassen Saigons sind die Zeichen eindeutig: europäische Mode, Werbeplakate für Hollywoodfilme, Supermärkte. Und doch behauptet selbst die jüngste Generation von Vietnamesen einhellig: Verändere sich die Wirtschaft noch so schnell, eine Veränderung in den Köpfen der Menschen braucht „hundert Jahre“.
 
@@ -13,5 +22,5 @@ Drei erzählen eine Geschichte: Von einem König der zwanzig Söhne ausschickt d
 
 Am Schluss werden wir die Geschichte von dem eckigen und dem Runden Kuchen selbst noch einmal erzählen. Dann hoffentlich mit mehr Verständnis dafür was Tradition uns bedeutet.
 
-  
-Buch: Johannes Nguyen, Hanna Römmelt und Florian Geierstanger Erste Aufnahmen im Mai / Juni 2004 in Saigon / Vietnam
+- Buch: Johannes Nguyen, Hanna Römmelt und Florian Geierstanger
+- Erste Aufnahmen im Mai / Juni 2004 in Saigon / Vietnam

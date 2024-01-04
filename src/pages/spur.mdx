@@ -1,0 +1,44 @@
+---
+title: "Spur"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
+---
+
+import Blockquote from "../components/Blockquote.astro";
+import { Image } from "astro:assets";
+import hero from "../assets/spur_still.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Video still"
+  />
+</figure>
+
+<Blockquote
+  author="Wolfgang
+Herzer"
+>
+  Die Bild-Ton-Installation von Florian Geierstanger trägt den Titel ‘Spur’. Ein
+  Film-Still zeigt ein Stück Trampelpfad im Schnee, im weißen Nirgendwo. Es ist
+  eine Abkürzung, auf der ein Mann von einem Dorf-Teil zum anderen gelangt. Das
+  erklärt eine Stimme aus dem Off. In der kurzen ‘dokumentarischen
+  Bildbeschreibung’, die der Sprecher in der Ich-Form vorträgt, entsteht die
+  Imagination des ganzen dörflichen, im Bild unsichtbaren Kosmos.
+</Blockquote>
+
+<Blockquote author="Textauszug">
+  Ein Mann steigt einen Hügel hinauf. Es ist Winter, er ist mindestens dreissig
+  Zentimeter im schnee. Er trägt eine schwarze Hose, eine schwarze Jacke und
+  einen schwarzen Hut. Er stützt sich auf zwei Stöcke. Weder Herkunft noch Ziel
+  des Mannes sind erkennbar, sie liegen ausserhalb des Bildes.
+</Blockquote>
+
+3 min
+
+## Ausstellungen
+
+- [Kunstverein Weiden](https://www.kunstvereinweiden.de/spezial/heimatkunde/text.htm) / [Heimatkunde](/assets/heimatkunde_flyer.pdf) 28.4. bis 28.5.2006
+- [Reaktorhalle München](https://www.klasse-waehner.de/doku.php?id=broad_freedoms) / [Broad Freedoms](/assets/broadfreedoms_einladungskarte.pdf) 23.6 bis 26.6.2005

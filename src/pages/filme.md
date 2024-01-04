@@ -5,19 +5,19 @@ lang: 'de'
 ---
 
 
-- 2019-2020 [Lernhausfilm](https://lernhausfilm.de/) — Dokumentarische Webserie und Podcast über das Münchner Lernhauskonzept
-- 2018-21 Zeitzeugen-Interviews zur Ortsgeschichte des Marktes Oberstdorf (zweite Drehphase)
 
   
 ## Filme 
 
+- 2019-2020 [Lernhausfilm](https://lernhausfilm.de/) — Dokumentarische Webserie und Podcast über das Münchner Lernhauskonzept
 - 2013 [Filmkopierwerk](filmkopierwerk) Dokumentarfilm
 - 2010 [Joe](parfuem) Dokumentarfilm, 20min, Underdox Filmfestival
 - 2009 [Augen schauen mich an](augen) Science-Fiction-Dokumentarfilm, 22min
 - 2009 [What you did in my head](paulus) Videoinstallation, Katholische Akademie München
 - 2008 [My Way](myway) Dokumentarfilm, 45min, Underdox Filmfestival
 - 2006 [Transgresiones](tijuana) Dokumentarfilm, 35min, Tijuana/San Diego
-- 2005 [Spur](Spur) Videoinstallation, 4min, Kunstverein Weiden
+- 2005 [Spur](spur) Videoinstallation, 4min, Kunstverein Weiden
+- 2004-21 [Zur Ortsgeschichte des Marktes Oberstdorf](oberstdorf), Zeitzeugen-Interviewprojektdokk
 
   
 
@@ -42,9 +42,8 @@ lang: 'de'
 
 ## Weitere Filmprojekte
 
-- 2009 [Tanger](Tanger) Recherche, Sevilla / Spanien, Tanger / Marokko
-- 2007 [welttheater](welttheater) Dokumentarfilmprojekt, Oberstdorf, Fraisse / Frankreich
+- 2009 [Tanger](tanger) Recherche, Sevilla / Spanien, Tanger / Marokko
+- 2007 [Oberstdorf im Welttheater](welttheater) Dokumentarfilmprojekt, Oberstdorf, Fraisse / Frankreich
 - 2006 [König der Spiele](yugioh) Dokumentarfilm, 25min
-- 2004 [rund_fuer_himmel](rund_fuer_himmel) Dokumentarfilmprojekt, Saigon / Vietnam
-- 2004 [Oberstdorf im frühen 20. Jhd.](oberstdorf) Interviewserie (erste Drehphase)
+- 2004 [Rund für Himmel](rund_fuer_himmel) Dokumentarfilmprojekt, Saigon / Vietnam
 - 2002 [Von La Paz nach Villa Armonía](villaarmonia) Dokumentarfilm, 12min, Bolivien

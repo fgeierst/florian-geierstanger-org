@@ -1,0 +1,28 @@
+---
+title: "Tanger"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
+---
+
+import { Image } from "astro:assets";
+import hero from "../assets/projekte/tanger_200811_strassea6b.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Von La Paz nach Villa Armonia"
+  />
+</figure>
+
+- Buch: Diana Grothues und Florian Geierstanger
+- Unterstützung:
+
+  - [Dr. Khalid Amine](http://icpsresearch.blogspot.com/2007/12/welcome.html) (International Centre for Performance Studies)
+  - Mustapha Hilal Soussi
+  - [Zoubeir Ben Bouchta](http://interactive-worlds.blogspot.com/2008/03/ben-bouchta-bio-eng.html)
+
+## Conference Paper
+
+- [Similarities between Tijuana and Tangier](/assets/tijuana_tanger01.pdf)

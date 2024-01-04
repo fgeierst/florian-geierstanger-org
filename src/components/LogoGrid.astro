@@ -1,0 +1,14 @@
+<div class="logos">
+  <slot />
+</div>
+
+<style is:global>
+  .logos ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+    gap: 1em 2em;
+    padding-inline-start: 0;
+    justify-items: center;
+  }
+</style>

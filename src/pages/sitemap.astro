@@ -8,34 +8,48 @@ export const frontmatter = {
 let pages = [];
 
 // collect Markdown pages
-const allMdPages = await Astro.glob("./blog/[^_]*.md*");
+const allMdPages = await Astro.glob("./**/[^_]*.md*");
 allMdPages.forEach((page) => {
   pages.push({
     title: page.frontmatter.title,
-    id: page.url.substring(1),
+    id: "/" + page.url.substring(1).replace(":", "/"),
   });
 });
 
 // collect Astro pages
 const allAstroPages = await Astro.glob("./*.astro");
 allAstroPages.forEach((page) => {
-  if (page?.frontmatter?.title) {
-    pages.push({
-      title: page?.frontmatter?.title,
-      id: "", // @todo add id
-    });
-  }
+  pages.push({
+    title: page?.frontmatter?.title,
+    id: page.url,
+  });
+});
+
+pages.sort((a, b) => {
+  const titleA = (a.title || "").replace(/[^\w\s]/gi, "").toLowerCase();
+  const titleB = (b.title || "").replace(/[^\w\s]/gi, "").toLowerCase();
+  return titleA.localeCompare(titleB);
 });
 ---
 
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
-  <ul>
+  <ol>
     {
       pages.map((item) => (
         <li>
-          <a href={`/${item.id.replace(":", "/")}`}>{item.title}</a>
+          <a href={`${item.id}`}>{item.title}</a>
         </li>
       ))
     }
-  </ul>
+  </ol>
 </BaseLayout>
+
+<style>
+  ol a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+</style>

@@ -15,7 +15,7 @@
     widecontent-start textcontent-start] 1fr [textcontent-end widecontent-end
     maxcontent-end] var(--grid-margin) [fullwidth-end];
 
-  @media (min-width: 720px) {
+  @media (width > 720px) {
     // grid-margin + textcontent + grid-margin + scrollbar (~15px)
     --grid: [fullwidth-start] minmax(var(--grid-margin), 1fr) [maxcontent-start]
       minmax(0, var(--grid-expansion)) [widecontent-start]
@@ -30,6 +30,7 @@
   grid-column: fullwidth !important;
   display: grid;
   grid-template-columns: var(--grid);
+
   > * {
     grid-column: fullwidth;
   }
@@ -37,17 +38,32 @@
   figure {
     margin-block-end: var(--space-200);
 
-    > img {
+    > :is(img, iframe, fit-vids) {
       width: 100%;
-      grid-column: widecontent;
       margin-block-end: var(--space-50);
+      grid-column: fullwidth;
+
+      @media (width > 720px) {
+        grid-column: widecontent;
+      }
     }
+
     > figcaption {
       grid-column: textcontent;
     }
   }
+
+  .video {
+    grid-column: maxcontent;
+    margin-block: var(--space-200) var(--space-200);
+
+    > video {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
-.widecontent {
+.layout-grid .widecontent {
   grid-column: widecontent;
 }

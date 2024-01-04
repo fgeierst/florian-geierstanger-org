@@ -1,6 +1,44 @@
-# What you did in my head
+---
+title: "What you did in my head"
+layout: "../layouts/BaseLayout.astro"
+lang: "de"
+---
 
-## Vor dem Film / Bildbeschreibung
+import Credits from "../components/Credits.astro";
+import { Image } from "astro:assets";
+import hero from "../assets/plakat_paulus.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={hero}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="What you did in my head"
+  />
+</figure>
+
+Aus dem Konzept: "Der Film handelt von Verbindungen der Geschichten, die einer erzählt, mit seinem eigenen Leben. Die Geschichten unterscheiden sich in ihrem Grad an Realität, unterscheiden sich in der Art ihrer Verbindung mit dem Leben der jungen Frau: Eine Geschichte ist biograﬁsch, aus der Vergangenheit. Die zweite Geschichte ist ein Weitererzählen, ein Überliefern einer Geschichte aus dem Erzählschatz der christlichen Familie. Es ist die Paulus-Geschichte. Die dritte Geschichte ist ausgedacht, eine Spekulation über die Zukunft. (...)"
+
+<Credits>
+
+- Buch, Regie, Schnitt: Florian Geierstanger
+- Kamera: Susanne Schranner
+- Tonmischung: Tom Rudolph
+- März 2009, Jenkofen, Schwabing und Karlsfeld
+- Sprache: Niederbayrisch mit engl. UT
+- Dauer: 6 min
+
+</Credits>
+
+## Ausstellung "Der große P"
+
+- 7.&nbsp;Mai bis 17. Juli 2009, Katholische Akademie München
+- [Einladungskarte](/assets/kathaka_paulus_einladungskarte.pdf)
+- [Ausstellungskatalog (Auszug)](/assets/kathakademie_pauluskatalog_auszug.pdf)
+
+## Regiestatement
+
+### Vor dem Film / Bildbeschreibung
 
 1\. Das erste Bild ist das eines Bauernhofs, in einem kleinen Dorf in Niederbayern. Zu dem Hof gehören zwei Wohnhäuser (ein altes aus den 1960er-Jahren, das den Eltern der jungen Frau gehört. Und ein neues ihres Bruders und seiner Frau). Hier ist sie aufgewachsen. Sie spricht mit einem bayerischen Dialekt (wie ihre Mutter, die irgendwann einmal im Hintergrund autaucht). Sie erzählt eine kurze Geschichte aus ihrer Vergangenheit, Kindheit oder Jugend. Von ihrem Heranwachsen auf diesem Hof. Mit dem Kirchturm in Sicht- und Hörweite. Die Erzählung aus ihrer Biograﬁe ist nur ein Fragment, ein kurzer, zusammenhangsloser Ausschnitt.
 
@@ -8,7 +46,7 @@
 
 3\. Im dritten Bild nähert sich die junge Frau ihrem Arbeitsplatz. Eine große Firma im Industriegebiet einer Stadt. Sie fährt in ihrem Auto, wie jeden Morgen. Die Kamera schaut von der Rückbank durch die Windschutzscheibe nach vorn. Straße, Berufsverkehr. Firmengebäude. Die Frau ist von hinten sichtbar, leicht im Proﬁl. Lenkrad, Hände. Sie erzählt während des Fahrens. Von ihrer Zukunft. Worauf sie zufährt. Sie fährt auf die Firma zu (Maschinenbau, Lastwagen), und sie fährt auf ihre Zukunft zu. In fünf Jahren – wo könnte sie da sein? Eine kurze Geschichte von der Zukunft. Eine Vermutung. Oder ein Wunsch. Wo würde sie gerne sein, in fünf Jahren oder in zehn? (Wieder nur ein Fragment, ein Ausschnitt)
 
-## Nach dem Film / Zur Form
+### Nach dem Film / Zur Form
 
 Die Paulus-Geschichte wird in ein Verhältnis gesetzt. Dieses ins-Verhältniss-Setzen soll sie nicht schwächer machen - dadurch dass sie überhaupt erzählt wird ist sie auch eine Möglichkeit / wird sie realer, wirklicher, möglicher.
 
