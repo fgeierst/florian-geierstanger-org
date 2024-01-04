@@ -6,12 +6,13 @@ lang: "de"
 
 import Credits from "../components/Credits.astro";
 import { Image } from "astro:assets";
-import hero from "../assets/projekte/2012filmkopierwerk/kopierwerk_16mmhd.mov.01_00_57_18.standbild007e2.jpg";
+import hero from "../assets/projekte/kopierwerk_still.jpg";
 
 <figure class="layout-grid">
   <Image
     src={hero}
-    width="600"
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
     alt="Kopierwerkstechnikerin beim Prüfen eines Negativs"
   />
 </figure>
@@ -24,6 +25,8 @@ Die Tätigkeit der Kopierwerkstechniker ist eine manuelle, in der Dunkelkammer p
 - Mitarbeit: Marc Eberhard, Mieko Azuma, Laura Morcillo, Florian Haag
 - Staatliche Hochschule für Gestaltung Karlsruhe: Marcel Neudeck, Bernhard Sallmann, Katharina Bühler, Karin Schöning, Thomas Heise
 - Vielen Dank an die Mitarbeiter des SWR Baden-Baden
-- D 2014. 16mm s/w stumm 11 Min.
+- D 2014
+- Format: 16mm s/w stumm
+- Dauer: 11 Min.
 
 </Credits>

@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import heroImage from "../assets/images/dreharbeiten_im_sudan_schaetze_der_welt.jpg";
+import heroImage from "../assets/projekte/dreharbeiten_im_sudan_schaetze_der_welt.jpg";
 export const frontmatter = {
-  title: "Biografie",
+  title: "Florian Geierstanger",
   lang: "de",
 };
 ---
@@ -12,13 +12,14 @@ export const frontmatter = {
   <figure class="layout-grid">
     <Image
       src={heroImage}
-      width={835}
-      height={470}
-      format="webp"
+      widths={[400, 800, 1200]}
+      sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
       alt="Kameramann hinter einer auf einem Kran montierten Kamera. Im Hintergrund Pyramiden."
     />
     <figcaption>Dreharbeiten im Sudan (Foto: Rüdiger Lorenz)</figcaption>
   </figure>
+
+  <h2>Biografie</h2>
 
   <p>
     Florian Geierstanger, geb. 1981 in Oberstdorf/Allgäu, lebt und arbeitet in
