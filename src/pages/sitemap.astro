@@ -1,51 +1,53 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 export const frontmatter = {
-	title: "Sitemap",
-	lang: "de"
-}
+  title: "Sitemap",
+  lang: "de",
+};
 
-let pages = []
+let pages = [];
 
 // collect fetched pages
-const response = await fetch('https://wiki.fgeierst.de/lib/exe/ajax.php?call=api&fn=pages');
+const response = await fetch(
+  "https://wiki.fgeierst.de/lib/exe/ajax.php?call=api&fn=pages"
+);
 const allFetchedPages = await response.json();
-allFetchedPages.forEach(page => {
-	pages.push({
-		title: page.title,
-		id: page.id.replaceAll(':', '/')
-	})
+allFetchedPages.forEach((page) => {
+  pages.push({
+    title: page.title,
+    id: page.id.replaceAll(":", "/"),
+  });
 });
 
 // collect Markdown pages
-const allMdPages = await Astro.glob('./blog/*.md')
-allMdPages.forEach(page => {
-	pages.push({
-		title: page.frontmatter.title,
-		id: page.url.substring(1)
-	})
+const allMdPages = await Astro.glob("./blog/[^_]*.md*");
+allMdPages.forEach((page) => {
+  pages.push({
+    title: page.frontmatter.title,
+    id: page.url.substring(1),
+  });
 });
 
 // collect Astro pages
-const allAstroPages = await Astro.glob('./*.astro')
-allAstroPages.forEach(page => {
-	if (page?.frontmatter?.title) {
-		pages.push({
-			title: page?.frontmatter?.title,
-			id: '' // @todo add id
-		})
-	}
+const allAstroPages = await Astro.glob("./*.astro");
+allAstroPages.forEach((page) => {
+  if (page?.frontmatter?.title) {
+    pages.push({
+      title: page?.frontmatter?.title,
+      id: "", // @todo add id
+    });
+  }
 });
-
 ---
+
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
-	<ul>
-		{pages.map((item) => (
-			<li>
-				<a href={`/${item.id.replace(':', '/')}`}>
-					{item.title}
-				</a>
-			</li>
-		))}
-	</ul>
+  <ul>
+    {
+      pages.map((item) => (
+        <li>
+          <a href={`/${item.id.replace(":", "/")}`}>{item.title}</a>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
