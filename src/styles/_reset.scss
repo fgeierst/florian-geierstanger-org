@@ -76,3 +76,8 @@ ol {
 li {
   margin-block-end: var(--space-100);
 }
+
+:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
