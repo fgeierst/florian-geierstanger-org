@@ -17,8 +17,8 @@ const siteTitle = "Florian Geierstanger";
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title} — {siteTitle}</title>
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <title>{title !== siteTitle ? `${title} — ` : ""} {siteTitle}</title>
     <link rel="me" href="https://mastodon.social/@kinoauge" />
     <link
       rel="preload"

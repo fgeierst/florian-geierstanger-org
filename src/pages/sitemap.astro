@@ -7,7 +7,6 @@ export const frontmatter = {
 
 let pages = [];
 
-// collect Markdown pages
 const allMdPages = await Astro.glob("./**/[^_]*.md*");
 allMdPages.forEach((page) => {
   pages.push({
@@ -16,7 +15,6 @@ allMdPages.forEach((page) => {
   });
 });
 
-// collect Astro pages
 const allAstroPages = await Astro.glob("./*.astro");
 allAstroPages.forEach((page) => {
   pages.push({
