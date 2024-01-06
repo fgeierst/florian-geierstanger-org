@@ -58,21 +58,21 @@ const siteTitle = "Florian Geierstanger";
 
     <style is:global>
       .layout-grid {
-        .site-title {
+        & .site-title {
           font-size: inherit;
           font-weight: inherit;
         }
 
-        header,
-        footer {
+        & header,
+        & footer {
           grid-column: maxcontent;
         }
 
-        footer {
+        & footer {
           margin-block: var(--space-400);
         }
 
-        .main {
+        & .main {
           margin-block-start: var(--space-400);
 
           & > * {
@@ -80,11 +80,11 @@ const siteTitle = "Florian Geierstanger";
           }
         }
 
-        .date {
+        & .date {
           font-style: italic;
         }
 
-        .description {
+        & .description {
           font-size: 1.25em;
           font-weight: 350;
         }

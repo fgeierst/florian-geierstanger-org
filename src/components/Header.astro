@@ -53,26 +53,28 @@ const navItems = [
   nav {
     margin-block: var(--space-50);
 
-    ul {
-      display: flex;
-      flex-wrap: wrap;
+    & ul {
       gap: var(--space-50) var(--space-200);
-      list-style: none;
+      flex-wrap: wrap;
       margin-block: 0;
       padding-inline-start: 0;
+      list-style: none;
+      display: flex;
     }
 
-    li {
+    & li {
       margin-block-end: unset;
 
       &:first-child {
-        @media (min-width: 900px) {
-          flex-grow: 1;
+        @media (width >= 900px) {
+          & {
+            flex-grow: 1;
+          }
         }
       }
     }
 
-    a {
+    & a {
       text-decoration: none;
 
       &:hover {

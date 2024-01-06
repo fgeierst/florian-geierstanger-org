@@ -9,34 +9,39 @@
 
   @media (width > 720px) {
     /* grid-margin + textcontent + grid-margin + scrollbar (~15px) */
-    --grid: [fullwidth-start] minmax(var(--grid-margin), 1fr) [maxcontent-start]
-      minmax(0, var(--grid-expansion)) [widecontent-start]
-      minmax(0, var(--grid-expansion)) [textcontent-start]
-      var(--grid-textcontent) [textcontent-end] minmax(0, var(--grid-expansion))
-      [widecontent-end] minmax(0, var(--grid-expansion)) [maxcontent-end]
-      minmax(var(--grid-margin), 1fr) [fullwidth-end];
+    & {
+      --grid: [fullwidth-start] minmax(var(--grid-margin), 1fr)
+        [maxcontent-start] minmax(0, var(--grid-expansion)) [widecontent-start]
+        minmax(0, var(--grid-expansion)) [textcontent-start]
+        var(--grid-textcontent) [textcontent-end]
+        minmax(0, var(--grid-expansion)) [widecontent-end]
+        minmax(0, var(--grid-expansion)) [maxcontent-end]
+        minmax(var(--grid-margin), 1fr) [fullwidth-end];
+    }
   }
 }
 
 .layout-grid {
-  grid-column: fullwidth !important;
-  display: grid;
   grid-template-columns: var(--grid);
+  display: grid;
+  grid-column: fullwidth !important;
 
   & > * {
     grid-column: fullwidth;
   }
 
-  figure {
+  & figure {
     margin-block-end: var(--space-200);
 
     & > :is(img, iframe, fit-vids) {
+      grid-column: fullwidth;
       width: 100%;
       margin-block-end: var(--space-50);
-      grid-column: fullwidth;
 
       @media (width > 720px) {
-        grid-column: widecontent;
+        & {
+          grid-column: widecontent;
+        }
       }
     }
 
@@ -50,7 +55,9 @@
     grid-column: fullwidth !important;
 
     @media (width > 720px) {
-      grid-column: widecontent !important;
+      & {
+        grid-column: widecontent !important;
+      }
     }
 
     & > video {
