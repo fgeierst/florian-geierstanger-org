@@ -27,6 +27,7 @@ const navItems = [
 ];
 ---
 
+<a class="skip-link" href="#main">Skip to content</a>
 <nav>
   <ul>
     {
@@ -50,6 +51,20 @@ const navItems = [
 </nav>
 
 <style>
+  .skip-link {
+    position: absolute;
+    transform: scale(0);
+
+    &:focus-visible {
+      transform: scale(1);
+      top: var(--space-50);
+      left: var(--space-50);
+      background-color: var(--color-background);
+      text-decoration: none;
+      padding-inline: var(--space-50);
+      outline-offset: 0;
+    }
+  }
   nav {
     margin-block: var(--space-50);
 

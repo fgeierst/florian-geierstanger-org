@@ -4,7 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 let {
   title,
-  content,
   hasTitleElement = false,
   date,
   lang = "de",
@@ -42,7 +41,7 @@ const siteTitle = "Florian Geierstanger";
         <Header />
       </header>
 
-      <main class="main layout-grid">
+      <main class="main layout-grid" id="main">
         {date && <p class="date">{date}</p>}
 
         {!hasTitleElement && <h1 class="page-title">{title}</h1>}
