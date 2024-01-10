@@ -1,0 +1,26 @@
+---
+title: "My first website"
+publishDate: "2022-08-18"
+layout: "../../layouts/PostLayout.astro"
+lang: "en"
+---
+
+import { Image } from "astro:assets";
+import heroImage from "../../assets/blog/1997-first-website.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={heroImage}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Screenshot of a text only website, blue text on black
+  background"
+  />
+</figure>
+
+I found [my first website on Archive.org](https://web.archive.org/web/20240000000000*/http://home.allgaeu.org/wgeierst/). It shows the HTML files saved by an Alexa webcrawl on Oct 21, 1997. By the time, the crawler came by, the visitor counter showed 15 hits. If one of these visitors had clicked on my company brand name, "Fg interactive", they would see I was already offering web design services at age 16.
+
+A second iteration of the website I found on an old hard drive. Presumablely from 1998 it already shows a list of clients, I made websites for. It was made with Microsoft FrontPage 3.0 and featured a <code>&lt;frameset&gt;</code> design. Another techique at at the time was sliced jpg images.
+
+- https://github.com/fgeierst/florian-geierstanger-archive/
+- https://florian-geierstanger-archive.vercel.app/
