@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+const { item } = Astro.props;
+---
+
+<div class="card">
+  <div class="grid">
+    <Image class="screenshot" src={item.img} alt="Screenshot of {item.title}" />
+    <a href={item.link}>{item.date}</a>
+  </div>
+</div>
+
+<style>
+  .card {
+    position: relative;
+
+    &:focus-within {
+      outline: 2px solid black;
+      outline-offset: 2px;
+    }
+  }
+  .screenshot {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.25rem;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+</style>

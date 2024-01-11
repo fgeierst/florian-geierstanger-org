@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArchiveItem from "../components/ArchiveItem.astro";
+import img_1997 from "../assets/blog/1997-first-website.jpg";
+import img_1998 from "../assets/blog/1998-website.jpg";
+import img_1999 from "../assets/blog/1999-website.jpg";
+
+export const frontmatter = {
+  title: "Archive",
+  lang: "en",
+};
+
+const items = [
+  {
+    title: "Personal Website",
+    date: "1997",
+    link: "https://florian-geierstanger-archive.vercel.app/1997-home-allgaeu-org/index.html",
+    img: img_1997,
+  },
+  {
+    title: "Personal Website",
+    date: "1998",
+    link: "https://florian-geierstanger-archive.vercel.app/1998-home-allgaeu-org/INDEX.HTM",
+    img: img_1998,
+  },
+  {
+    title: "Personal Website",
+    date: "1999",
+    link: "https://florian-geierstanger-archive.vercel.app/1999-home-allgaeu-org/index.html",
+    img: img_1999,
+  },
+  // {
+  //   title: "Flash",
+  //   date: "",
+  //   link: "",
+  //   img: ,
+  // },
+  // {
+  //   title: "Dokuwiki",
+  //   date: "",
+  //   link: "",
+  //   img: ,
+  // },
+  // {
+  //   title: "Astro",
+  //   date: "",
+  //   link: "",
+  //   img: ,
+  // },
+];
+---
+
+<BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
+  <div class="grid">
+    {items.map((item) => <ArchiveItem item={item} />)}
+  </div>
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    gap: 1em;
+
+    @media (width > 400px) {
+      & {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+  }
+</style>
