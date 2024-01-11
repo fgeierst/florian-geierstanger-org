@@ -1,8 +1,7 @@
 ---
 import { useTranslations } from "../i18n/utils";
 
-const { lang } = Astro.props;
-const t = useTranslations(lang);
+const t = useTranslations(Astro.props.lang);
 
 const navItems = [
   {
@@ -11,15 +10,15 @@ const navItems = [
   },
   {
     id: "/filme",
-    title: "Filme",
+    title: t("nav.films"),
   },
   {
     id: "/filmvermittlung",
-    title: "Filmvermittlung",
+    title: t("nav.education"),
   },
   {
     id: "/filmprogramme",
-    title: "Filmprogramme",
+    title: t("nav.programs"),
   },
   {
     id: "/blog",
@@ -27,12 +26,12 @@ const navItems = [
   },
   {
     id: "/kontakt",
-    title: "Kontakt",
+    title: t("nav.contact"),
   },
 ];
 ---
 
-<a class="skip-link" href="#main">{t("nav.skip")}</a>
+<a class="skip-link" href="#main">{t("header.skip")}</a>
 <nav>
   <ul>
     {

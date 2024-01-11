@@ -7,11 +7,21 @@ export const defaultLang = "de";
 
 export const ui = {
   en: {
-    "nav.home": "Homepage",
-    "nav.skip": "Skip to content",
+    "footer.home": "Homepage",
+    "header.skip": "Skip to content",
+    "nav.films": "Films",
+    "nav.education": "Film Education",
+    "nav.programs": "Film Programs",
+    "nav.blog": "Blog",
+    "nav.contact": "Contact",
   },
   de: {
-    "nav.home": "Startseite",
-    "nav.skip": "Zum Hauptinhalt springen",
+    "footer.home": "Startseite",
+    "header.skip": "Zum Hauptinhalt springen",
+    "nav.films": "Filme",
+    "nav.education": "Filmvermittlung",
+    "nav.programs": "Filmprogramme",
+    "nav.blog": "Blog",
+    "nav.contact": "Kontakt",
   },
 } as const;

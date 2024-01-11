@@ -1,13 +1,12 @@
 ---
 import { useTranslations } from "../i18n/utils";
 
-const { lang } = Astro.props;
-const t = useTranslations(lang);
+const t = useTranslations(Astro.props.lang);
 ---
 
 <nav>
   <ul>
-    <li><a href="/">{t("nav.home")}</a></li>
+    <li><a href="/">{t("footer.home")}</a></li>
     <li><a href="/sitemap/">Sitemap</a></li>
   </ul>
 </nav>
