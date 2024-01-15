@@ -1,0 +1,28 @@
+---
+title: "T3DD Talk: How to design and develop a highly flexible and accessible website navigation"
+publishDate: "2023-08-05"
+layout: "../../layouts/PostLayout.astro"
+lang: "en"
+---
+
+import { Image } from "astro:assets";
+import heroImage from "../../assets/blog/devdays-talk-florian.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={heroImage}
+    widths={[400, 800, 1200]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    alt="Screenshot of a text only website, blue text on black
+  background"
+  />
+</figure>
+
+[Lukas Bahr](https://lukas-bahr.de/) and I gave a talk at [TYPO3 Developer Days 2023](https://t3dd23.typo3.com/de/programm/sessions/how-to-design-and-develop-a-highly-flexible-and-accessible-website-navigation-547) in Karlsruhe.
+
+From both a designer and a frontend developer point of view, we will outline how to conceive, design and implement with TYPO3 two basic types of main navigation designs that will cover the use cases of most websites. We will detail proven user experience patterns, accessibility considerations and showcase our existing in production implementations. It's 2023 and yet many navigations are overloaded, confusing for users and fail even basic accessibility requirements, let us change that!
+
+## Ressources
+
+- https://github.com/fgeierst/typo3-goat-header
+- [Figma document](https://www.figma.com/file/K0TmeMfaSVa7Uo7fBTUkJs/Navigation-Pattern?type=design&node-id=4-1173&mode=design&t=mSWRy0KbrAwZkGZm-0)

@@ -58,3 +58,6 @@ Our mobile first grid provides four tracks (fullwidth, max content, wide content
 
 - Shout-out to Lukas Bahr  who's UI designs inspired this grid in the first place, back in January of this year, and who closely colaborated in improving it ever since.
 
+## Updates
+
+- 2023-11-09 Kevin Powell's video [A new approach to container and wrapper classes](https://www.youtube.com/watch?v=c13gpBrnGEw&t=5s) could popularize this grid approach [(Codepen)](https://codepen.io/kevinpowell/pen/ExrZrrw?editors=0110).
