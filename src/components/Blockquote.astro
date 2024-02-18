@@ -1,8 +1,8 @@
 ---
-const { author, url } = Astro.props;
+const { author, url, lang } = Astro.props;
 ---
 
-<figure class="blockquote">
+<figure class="blockquote" lang={lang}>
   <blockquote cite={url}>
     <p>
       <slot />
