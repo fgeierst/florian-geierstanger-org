@@ -1,4 +1,5 @@
 ---
+import type { AstroInstance } from "astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 export const frontmatter = {
   title: "Sitemap",
@@ -7,7 +8,9 @@ export const frontmatter = {
 
 let pages = [];
 
-const allMdPages = await Astro.glob("./**/[^_]*.md*");
+const allMdPages = Object.values(
+  import.meta.glob("./**/[^_]*.md*", { eager: true })
+);
 allMdPages.forEach((page) => {
   pages.push({
     title: page.frontmatter.title,
@@ -15,7 +18,9 @@ allMdPages.forEach((page) => {
   });
 });
 
-const allAstroPages = await Astro.glob("./*.astro");
+const allAstroPages = Object.values(
+  import.meta.glob("./*.astro", { eager: true })
+) as AstroInstance[];
 allAstroPages.forEach((page) => {
   pages.push({
     title: page?.frontmatter?.title,

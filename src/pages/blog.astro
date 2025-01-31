@@ -6,7 +6,9 @@ export const frontmatter = {
   lang: "en",
 };
 
-let allPosts = await Astro.glob("./blog/[^_]*.md*");
+let allPosts = Object.values(
+  import.meta.glob("./blog/[^_]*.md*", { eager: true })
+);
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -
