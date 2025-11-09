@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../layouts/Base.astro";
 import BlogItem from "../components/BlogItem.astro";
+import BaseLayout from "../layouts/Base.astro";
 export const frontmatter = {
   title: "Blog",
   lang: "en",
@@ -8,7 +8,13 @@ export const frontmatter = {
 
 let allPosts = Object.values(
   import.meta.glob("./blog/[^_]*.md*", { eager: true })
-);
+) as Array<{
+  frontmatter: { publishDate: string };
+  compiledContent?: () => string;
+  rawContent?: () => string;
+  Content?: any;
+}>;
+
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -
@@ -21,3 +27,10 @@ allPosts = allPosts.sort(
     {allPosts.map((post) => <BlogItem post={post} />)}
   </ul>
 </BaseLayout>
+
+<style>
+  ul {
+    padding-inline-start: 0;
+    margin-block-end: 0;
+  }
+</style>

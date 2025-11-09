@@ -1,19 +1,20 @@
 :root {
-	--hsl-white: 240, 20%, 99%;
-	--hsl-black: 220, 13%, 18%;
+  --hsl-white: 240, 20%, 99%;
+  --hsl-black: 220, 13%, 18%;
 
-	--hsl-background: var(--hsl-white);
-	--hsl-text: var(--hsl-black);
-	--color-background: hsl(var(--hsl-background));
-	--color-text: hsl(var(--hsl-text));
+  --hsl-background: var(--hsl-white);
+  --hsl-text: var(--hsl-black);
+  --color-background: hsl(var(--hsl-background));
+  --color-text: hsl(var(--hsl-text));
+  --color-border: hsl(0, 0%, 80%);
 
-	@media (prefers-color-scheme: dark) { 
-		--hsl-background: var(--hsl-black);
-		--hsl-text: var(--hsl-white);
-	}
+  @media (prefers-color-scheme: dark) {
+    --hsl-background: var(--hsl-black);
+    --hsl-text: var(--hsl-white);
+  }
 }
 
 body {
-	background-color: var(--color-background);
-	color: var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
