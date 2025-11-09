@@ -1,8 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
-const { content } = Astro.props;
-const category = content.category || "post";
-const date = new Date(content.publishDate);
+import type { BlogLayoutProps } from "./types";
+
+type Props = BlogLayoutProps;
+
+const { frontmatter } = Astro.props;
+const category = frontmatter.category || "post";
+const date = new Date(frontmatter.publishDate);
 const localDate = date.toLocaleDateString("de-DE", {
   year: "numeric",
   month: "long",
@@ -11,10 +15,10 @@ const localDate = date.toLocaleDateString("de-DE", {
 ---
 
 <Base
-  title={content.title}
+  title={frontmatter.title}
   date={localDate}
-  lang={content.lang}
-  description={content.description}
+  lang={frontmatter.lang}
+  description={frontmatter.description}
 >
   <slot />
 </Base>

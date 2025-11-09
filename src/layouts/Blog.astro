@@ -3,20 +3,23 @@ import BlogLink from "./BlogLink.astro";
 import BlogNote from "./BlogNote.astro";
 import BlogPost from "./BlogPost.astro";
 import BlogQuote from "./BlogQuote.astro";
+import type { BlogLayoutProps } from "./types";
 
-const { content } = Astro.props;
-const category = content.category || "post";
+type Props = BlogLayoutProps;
+
+const { frontmatter } = Astro.props;
+const category = frontmatter.category || "post";
 
 const layoutMap = {
   post: BlogPost,
   link: BlogLink,
   quote: BlogQuote,
   note: BlogNote,
-};
+} as const;
 
 const Layout = layoutMap[category] || BlogPost;
 ---
 
-<Layout content={content}>
+<Layout {...Astro.props}>
   <slot />
 </Layout>

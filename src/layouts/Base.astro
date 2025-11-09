@@ -1,14 +1,19 @@
 ---
-import "../styles/style.css";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-let {
+import Header from "../components/Header.astro";
+import "../styles/style.css";
+import type { BaseLayoutFrontmatter } from "./types";
+
+const frontmatter = (
+  "frontmatter" in Astro.props ? Astro.props.frontmatter : Astro.props
+) as BaseLayoutFrontmatter;
+const {
   title,
   hasTitleElement = false,
   date,
   lang = "de",
   description,
-} = Astro.props.frontmatter || Astro.props;
+} = frontmatter;
 const siteTitle = "Florian Geierstanger";
 ---
 
