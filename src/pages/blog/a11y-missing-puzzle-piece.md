@@ -2,7 +2,6 @@
 title: 'A11y was the missing puzzle piece to my understanding of web technologies'
 description: ''
 publishDate: '2022-07-14'
-layout: '../../layouts/PostLayout.astro'
 lang: 'en'
 ---
 

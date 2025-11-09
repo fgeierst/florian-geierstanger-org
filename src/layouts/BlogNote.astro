@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+const { content } = Astro.props;
+const category = content.category || "note";
+const date = new Date(content.publishDate);
+const localDate = date.toLocaleDateString("de-DE", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Base
+  title={content.title}
+  date={localDate}
+  lang={content.lang}
+  description={content.description}
+>
+  <slot />
+</Base>

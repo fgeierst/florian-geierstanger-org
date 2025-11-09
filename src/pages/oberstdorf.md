@@ -1,6 +1,6 @@
 ---
 title: "Zur Ortsgeschichte des Marktes Oberstdorf"
-layout: '../layouts/BaseLayout.astro'
+layout: '../layouts/Base.astro'
 lang: 'de'
 ---
 

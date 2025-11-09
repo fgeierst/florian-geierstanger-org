@@ -1,7 +1,6 @@
 ---
 title: 'Re-thinking the layout grid with CSS grid'
 publishDate: '2022-07-27'
-layout: '../../layouts/PostLayout.astro'
 lang: 'en'
 ---
 

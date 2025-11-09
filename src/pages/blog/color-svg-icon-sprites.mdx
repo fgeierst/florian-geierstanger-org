@@ -1,16 +1,16 @@
 ---
-title: 'Coloring SVG icon sprites in HTML and CSS'
-description: 'Piercing through SVG Shadow DOM and using SVG fragments as a pseudo element mask.'
-publishDate: '2023-04-03'
-layout: '../../layouts/PostLayout.astro'
-lang: 'en'
+title: "Coloring SVG icon sprites in HTML and CSS"
+description: "Piercing through SVG Shadow DOM and using SVG fragments as a pseudo element mask."
+publishDate: "2023-04-03"
+lang: "en"
 ---
 
 As long as a SVG is inlined, you can style it's colors with CSS just like that: `fill: red` and `stroke: blue`. As soon as you load the SVG as an external ressource, coloring it is less obvious. Here is what I found out.
 
 ## &lt;symbol&gt; in SVG
 
-I put several icons into *sprite.svg*
+I put several icons into _sprite.svg_
+
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<!-- y=000 search -->
@@ -28,26 +28,29 @@ I put several icons into *sprite.svg*
 	<view id="globe-view" viewBox="0 100 25 25"/>
 </svg>
 ```
+
 Every icon is wrapped by a `<symbol>` tag and has an id.
 
 ## &lt;use&gt; in HTML
 
-The *index.html* file looks like that
+The _index.html_ file looks like that
+
 ```html
 <svg width="24" height="24" style="--color-icon: blue">
-    <title>Search</title>
-    <use href="sprite.svg#search"></use>
+  <title>Search</title>
+  <use href="sprite.svg#search"></use>
 </svg>
 ```
+
 In an `<svg>` element, I can reference indiviual icons by the filename followed by a hash character and it's id. The accessible name is within `<title>` tags. While the svgs content lives in a Shadow DOM and is thus isolated from the rest of the page, CSS custom properties can 'pierce through' that boundary. I set `--color-icon` in the HTML and it's consumed by the stroke of the search icon and the fill of the globe icon. If the variable is not present in the HTML the fallback value `white` after the colon is used.
 
 ## mask: url() in CSS
 
-Before we can reference the SVG in CSS, we need to create SVG Fragment Identifiers. This is done once again with the `<use>` tag, this time in the SVG file itself. The `y=""` coordinate differs, so the icons are not stacked above each other. A `<view>` crops out exactly that part of the svg using the viewbox attribute. This has a different id — I use the suffix *-view*. And that one we reference in the *style.css*.
+Before we can reference the SVG in CSS, we need to create SVG Fragment Identifiers. This is done once again with the `<use>` tag, this time in the SVG file itself. The `y=""` coordinate differs, so the icons are not stacked above each other. A `<view>` crops out exactly that part of the svg using the viewbox attribute. This has a different id — I use the suffix _-view_. And that one we reference in the _style.css_.
 
 ```css
 .search-button::before {
-	--color-icon: red;
+  --color-icon: red;
   content: "";
   background-color: var(--color-icon);
   -webkit-mask: url("sprite.svg#search-view");
@@ -56,6 +59,7 @@ Before we can reference the SVG in CSS, we need to create SVG Fragment Identifie
   height: 2rem;
 }
 ```
+
 The HTML Fragment can't be reached by our CSS custom properties, so instead we use our color as the `background-color` of the pseudo element. This plain background is then cut out with the SVG Fragnent using the CSS `mask-image` property. Despite it's good [browser support](https://caniuse.com/?search=mask-image), you still need to also provide the `-webkit`-prefixed version for Chromium.
 
 ## References

@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+const category = post.frontmatter.category || "post";
 const date = new Date(post.frontmatter.publishDate);
 const localDate = date.toLocaleDateString("de-DE", {
   year: "numeric",
@@ -14,6 +15,7 @@ const localDate = date.toLocaleDateString("de-DE", {
 
 <li class="post-preview">
   <a href={post.url}>
+    <span class="category" data-category={category}>{category}</span>
     {post.frontmatter.title}
     <span> ({localDate})</span>
   </a>
@@ -26,5 +28,16 @@ const localDate = date.toLocaleDateString("de-DE", {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .category {
+    display: inline-block;
+    font-size: 0.875em;
+    font-weight: 500;
+    padding: 0.125em 0.5em;
+    margin-right: 0.5em;
+    border-radius: 0.25em;
+    background-color: var(--color-gray-200, #e5e7eb);
+    color: var(--color-gray-700, #374151);
   }
 </style>

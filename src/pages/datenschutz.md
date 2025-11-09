@@ -1,6 +1,6 @@
 ---
 title: 'Datenschutzerklärung'
-layout: '../layouts/BaseLayout.astro'
+layout: '../layouts/Base.astro'
 lang: 'de'
 ---
 

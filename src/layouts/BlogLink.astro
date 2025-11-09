@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "../layouts/Base.astro";
 const { content } = Astro.props;
+const category = content.category || "link";
 const date = new Date(content.publishDate);
 const localDate = date.toLocaleDateString("de-DE", {
   year: "numeric",
@@ -9,11 +10,11 @@ const localDate = date.toLocaleDateString("de-DE", {
 });
 ---
 
-<BaseLayout
+<Base
   title={content.title}
   date={localDate}
   lang={content.lang}
   description={content.description}
 >
   <slot />
-</BaseLayout>
+</Base>

@@ -2,7 +2,6 @@
 title: 'The RAM Layout Pattern'
 description: "No media queries, layout designed from the inside out"
 publishDate: '2021-12-11'
-layout: '../../layouts/PostLayout.astro'
 lang: 'en'
 ---
 
