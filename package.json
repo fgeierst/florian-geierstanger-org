@@ -1,5 +1,6 @@
 {
   "name": "florian.geierstanger.org",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -7,12 +8,10 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.10",
-    "astro": "^5.15.4"
+    "@astrojs/mdx": "^4.3.12",
+    "astro": "^5.16.4"
   },
-  "pnpm": {
-    "overrides": {
-      "rollup": "4.26.0"
-    }
+  "engines": {
+    "pnpm": ">= 10.0.0"
   }
 }
