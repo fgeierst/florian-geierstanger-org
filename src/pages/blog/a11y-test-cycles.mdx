@@ -1,0 +1,39 @@
+---
+title: "Shift Left, Audit Right"
+description: "A single accessibility audit can generate a huge backlog that blocks a team for several months. This typically indicates they haven't adopted a feature-level accessibility testing process."
+publishDate: "2024-03-08"
+layout: "../../layouts/PostLayout.astro"
+lang: "en"
+---
+
+import { Image } from "astro:assets";
+import heroImage from "../../assets/blog/2024-a11y-test-cycles.png";
+
+<figure class="layout-grid">
+  <Image
+    src={heroImage}
+    widths={[800, 1000, 1500]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    format="webp"
+    alt="Two test cycles for digital accessibility. The feature test cycle shows a fast, iterative process with designers and developers testing selected criteria on individual components. The app test cycle shows a comprehensive but slow process where external experts manually audit the entire application."
+    loading="eager"
+  />
+</figure>
+
+[Original file (Excalidraw)](https://excalidraw.com/#json=tiYOn7Mm-hWerKqEe_mTQ,K6SatLT0KdHCZsqoWQ6IxQ)
+
+## Feature Test Cycle
+
+- **Who tests:** Designers and developers within the team
+- **What is tested:** Individual components and features during development
+- **How it's tested:** Against selected accessibility criteria, often with automated tools and targeted manual checks
+- **Characteristics:** Fast, proactive, cost-effective
+- **Limitation:** Not exhaustive – focuses on common problems and core criteria
+
+## App Test Cycle
+
+- **Who tests:** External accessibility experts
+- **What is tested:** The entire application as a whole
+- **How it's tested:** Complete manual audit against all relevant criteria (e.g., WCAG 2.2, EN 301 549)
+- **Characteristics:** Thorough, comprehensive, authoritative assessment
+- **Challenges:** Slow, expensive, reactive, often creates large backlogs
