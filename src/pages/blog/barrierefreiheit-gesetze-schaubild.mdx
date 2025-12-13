@@ -1,0 +1,40 @@
+---
+title: "Europäische und deutsche Gesetzgebung zur digitalen Barrierefreiheit"
+publishDate: "2024-02-25"
+layout: "../../layouts/PostLayout.astro"
+lang: "de"
+---
+
+import { Image } from "astro:assets";
+import heroImage from "../../assets/blog/2024-barrierefreiheit-gesetze-schaubild.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={heroImage}
+    widths={[800, 1000, 1500]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    format="webp"
+    alt="Schaubild zur europäischen und deutschen Gesetzgebung zur digitalen Barrierefreiheit. Ein Strang betrifft öffentlichen Stellen und geht von der Web Accessibility Directive (2016) über die Norm EN 301549, und BITV 2.0 zur WCAG 2.1. Ein zweiter Strang betrifft Produkte und Dienstleistungen und geht vom European Accessiblity Act (2021) zum Barrierefreiheitsstärkungsgesetzt. Auch dieser Strang führt zur WCAG."
+    loading="eager"
+  />
+</figure>
+
+[Originaldatei (tldraw)](https://www.tldraw.com/p/lDAv8TuAeyWSaqrF3j8Mc?d=v671.-1135.2966.3361.page)
+
+## Für Websites und Apps öffentlicher Stellen gilt:
+
+- **Grundlage:** [Web Accessibility Directive (WAD) 2016/2102](https://eur-lex.europa.eu/eli/dir/2016/2102/oj/eng)
+- **Umsetzung Bund:** [Behindertengleichstellungsgesetz (BGG)](https://www.gesetze-im-internet.de/bgg/) von 2002, konkretisiert durch die [Barrierefreie-Informationstechnik-Verordnung (BITV) 2.0](https://www.gesetze-im-internet.de/bitv_2_0/) von 2011
+- **Umsetzung Länder:** Landesbehindertengleichstellungsgesetze mit eigenen IT-Verordnungen
+- **Anforderungen:** Einhaltung von EN 301 549, sowie Bereitstellung von zentralen Inhalten in Leichter Sprache und Deutscher Gebärdensprache
+
+### Für Produkte und Dienstleistungen der Privatwirtschaft gilt:
+
+- **Grundlage:** [European Accessibility Act (EAA) 2019/882](https://eur-lex.europa.eu/eli/dir/2019/882/oj/eng)
+- **Umsetzung:** [Barrierefreiheitsstärkungsgesetz (BFSG)](https://www.gesetze-im-internet.de/bfsg/) von 2021, konkretisiert durch die BFSGV von 2022
+- **Anforderungen:** Verweis auf EN 301 549 und deren kommende Revision
+
+### Technische Standards
+
+- Die **[Europäische Norm EN 301 549](https://accessible.canada.ca/creating-accessibility-standards/canasc-en-301-5492024-accessibility-requirements-ict-products-and-services)** (2019/2021) integriert die WCAG für Web-Inhalte, geht aber deutlich darüber hinaus: Sie regelt zusätzlich die Barrierefreiheit von Hardware, Software und Dienstleistungen.
+- Die **[Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG22/)** (WCAG 2.1, 2018 und WCAG 2.2, 2023) bilden die technische Basis speziell für Web-Inhalte und digitale Dokumente. Formal eine "Empfehlung" (Recommendation) des W3C, gilt sie weltweit als De-facto-Standard.
