@@ -8,8 +8,21 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.12",
-    "astro": "^5.16.4"
+    "@astrojs/mdx": "^7.0.2",
+    "astro": "^7.0.6",
+    "vite-plus": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.10.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "24.18.0",
+      "onFail": "download"
+    }
   },
   "engines": {
     "pnpm": ">= 10.0.0"
