@@ -1,0 +1,22 @@
+---
+title: "Talk: Accessibility Testen mit den Browser DevTools"
+publishDate: "2026-04-13"
+layout: "../../layouts/PostLayout.astro"
+lang: "de"
+---
+
+import { Image } from "astro:assets";
+import heroImage from "../../assets/blog/2026-talk-testing-devtools.jpg";
+
+<figure class="layout-grid">
+  <Image
+    src={heroImage}
+    widths={[800, 1000, 1500]}
+    sizes={`(min-width: 1300px) 960px, calc(100vw - 2rem)`}
+    format="webp"
+    alt="Drei Slides: Ein kleiner Leopard mit einer Sprechblase 'Muss ich wirklich manuell testen?', ein Screenshot des Accessibility-Panels in den DevTools und die Titelfolie 'Accessibility Testen mit den Browser DevTools'"
+    loading="eager"
+  />
+</figure>
+
+Warum decken Audits so viele Probleme auf? Web-Entwickler:innen testen oft nicht auf Barrierefreiheit, weil sie annehmen, dafür Screenreader beherrschen oder spezielle Tools lizenzieren zu müssen. Dabei decken die browsereigenen Mittel schon einen großen Teil ab. Mein Talk beim [Accessibility Meetup Munich #08](https://www.meetup.com/de-DE/accessibility-meetup-munich/events/313355299/). zeigt hands-on, wie man nur mit den Chrome DevTools Accessibility-Anforderungen manuell prüft.
