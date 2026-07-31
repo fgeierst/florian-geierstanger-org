@@ -1,521 +1,501 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WCAG Conformance Quiz</title>
-    <style>
-      body {
-        font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
-        background-color: #f8fafc;
-        color: #0f172a;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 1rem;
-        box-sizing: border-box;
-      }
-      .game-container {
-        background: white;
-        padding: 2.5rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        width: 100%;
-        text-align: center;
-        position: relative;
-      }
-      .header-area {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-      }
-      h1 {
-        font-size: 1.4rem;
-        margin: 0;
-        color: #2563eb;
-      }
-      .reset-btn {
-        background: none;
-        border: 1px solid #cbd5e1;
-        color: #64748b;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 500;
-      }
-      .reset-btn:hover {
-        background: #f1f5f9;
-        color: #0f172a;
-      }
-      #loading {
-        padding: 2rem;
-        color: #64748b;
-        font-weight: 500;
-      }
-      .score-board {
-        display: flex;
-        justify-content: space-between;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        padding: 0.75rem 1rem;
-        background: #f1f5f9;
-        border-radius: 8px;
-        font-size: 1rem;
-      }
-      .criterion-box {
-        margin-bottom: 1.5rem;
-        min-height: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .criterion-id {
-        font-size: 1.25rem;
-        color: #64748b;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-      }
-      .criterion-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1.3;
-      }
-      .buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-      }
-      .level-btn {
-        flex: 1;
-        padding: 1rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        border: 2px solid #2563eb;
-        background: white;
-        color: #2563eb;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .level-btn:hover:not(:disabled),
-      .level-btn:focus-visible:not(:disabled) {
-        background: #2563eb;
-        color: white;
-        transform: translateY(-2px);
-        outline: none;
-      }
-      .level-btn:disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
-        transform: none;
-        border-color: #cbd5e1;
-        color: #94a3b8;
-      }
-      .feedback {
-        min-height: 1.5rem;
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-      .correct {
-        color: #16a34a;
-      }
-      .incorrect {
-        color: #dc2626;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete WCAG Conformance Trainer</title>
+<style>
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .game-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  .header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  h1 { 
+    font-size: 1.4rem; 
+    margin: 0; 
+    color: #2563eb; 
+  }
+  .reset-btn {
+    background: none;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .reset-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+  }
+  #loading {
+    padding: 2rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+  .score-board {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .criterion-box {
+    margin-bottom: 1.5rem;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .criterion-id {
+    font-size: 1.25rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .criterion-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .criterion-title a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: #cbd5e1;
+    text-underline-offset: 4px;
+    transition: all 0.2s;
+  }
+  .criterion-title a:hover {
+    color: #2563eb;
+    text-decoration-color: #2563eb;
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .level-btn {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid #2563eb;
+    background: white;
+    color: #2563eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .level-btn:hover:not(:disabled), .level-btn:focus-visible:not(:disabled) {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+    outline: none;
+  }
+  .level-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    border-color: #cbd5e1;
+    color: #94a3b8;
+  }
+  .feedback {
+    min-height: 1.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .correct { color: #16a34a; }
+  .incorrect { color: #dc2626; }
+  
+  .description-box {
+    display: none;
+    background: #f8fafc;
+    border-left: 4px solid #2563eb;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #334155;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .description-box ul {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+  }
+  .description-box li {
+    margin-bottom: 0.5rem;
+  }
 
-      .description-box {
-        display: none;
-        background: #f8fafc;
-        border-left: 4px solid #2563eb;
-        padding: 1rem;
-        text-align: left;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: #334155;
-        margin-bottom: 1.5rem;
-        border-radius: 0 8px 8px 0;
-      }
+  .next-btn-container {
+    display: none;
+  }
+  #btn-next {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #btn-next:hover {
+    background: #1d4ed8;
+  }
+</style>
+</head>
+<body>
 
-      .next-btn-container {
-        display: none;
-      }
-      #btn-next {
-        background: #2563eb;
-        color: white;
-        width: 100%;
-        padding: 1rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-      #btn-next:hover {
-        background: #1d4ed8;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="game-container">
-      <div class="header-area">
-        <h1>WCAG Conformance Quiz</h1>
-        <button
-          class="reset-btn"
-          onclick="resetGame()"
-          id="reset-btn"
-          style="display: none"
-        >
-          Reset Progress
-        </button>
-      </div>
+<div class="game-container">
+  <div class="header-area">
+    <h1>WCAG Conformance Trainer</h1>
+    <button class="reset-btn" onclick="resetGame()" id="reset-btn" style="display: none;">Reset Progress</button>
+  </div>
+  
+  <div id="loading">
+    <p>Fetching complete WCAG standard from GitHub...</p>
+  </div>
 
-      <div id="loading">
-        <p>Fetching complete WCAG standard from GitHub...</p>
-      </div>
-
-      <div id="game-area" style="display: none">
-        <div class="score-board">
-          <span id="round-info">Round: 1</span>
-          <span
-            >Question: <span id="question-count">1</span>/<span id="total-count"
-              >0</span
-            ></span
-          >
-          <span style="color: #dc2626"
-            >Missed: <span id="missed-count">0</span></span
-          >
-        </div>
-
-        <div class="criterion-box">
-          <div class="criterion-id" id="criterion-id">Loading...</div>
-          <div class="criterion-title" id="criterion-title">Loading...</div>
-        </div>
-
-        <div class="buttons" id="options">
-          <button class="level-btn" onclick="checkAnswer('A')" id="btn-A">
-            Level A
-          </button>
-          <button class="level-btn" onclick="checkAnswer('AA')" id="btn-AA">
-            Level AA
-          </button>
-          <button class="level-btn" onclick="checkAnswer('AAA')" id="btn-AAA">
-            Level AAA
-          </button>
-        </div>
-
-        <div class="feedback" id="feedback"></div>
-
-        <div class="description-box" id="sc-description"></div>
-
-        <div class="next-btn-container" id="next-btn-container">
-          <button onclick="nextQuestion()" id="btn-next">
-            Next Question →
-          </button>
-        </div>
-      </div>
+  <div id="game-area" style="display: none;">
+    <div class="score-board">
+      <span id="round-info">Round: 1</span>
+      <span>Question: <span id="question-count">1</span>/<span id="total-count">0</span></span>
+      <span style="color: #dc2626;">Missed: <span id="missed-count">0</span></span>
     </div>
 
-    <script>
-      const JSON_URL =
-        "https://raw.githubusercontent.com/tenon-io/wcag-as-json/master/wcag.json";
-      const COOKIE_NAME = "wcagTrainerState";
+    <div class="criterion-box">
+      <div class="criterion-id" id="criterion-id">Loading...</div>
+      <div class="criterion-title" id="criterion-title">Loading...</div>
+    </div>
 
-      let allCriteria = [];
-      let currentRoundQueue = [];
-      let nextRoundQueue = [];
-      let currentQuestionIndex = 0;
-      let roundNumber = 1;
+    <div class="buttons" id="options">
+      <button class="level-btn" onclick="checkAnswer('A')" id="btn-A">Level A</button>
+      <button class="level-btn" onclick="checkAnswer('AA')" id="btn-AA">Level AA</button>
+      <button class="level-btn" onclick="checkAnswer('AAA')" id="btn-AAA">Level AAA</button>
+    </div>
+    
+    <div class="feedback" id="feedback"></div>
 
-      // --- Cookie Utilities ---
-      function setCookie(name, value, days) {
-        let expires = "";
-        if (days) {
-          const date = new Date();
-          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-          expires = "; expires=" + date.toUTCString();
+    <div class="description-box" id="sc-description"></div>
+
+    <div class="next-btn-container" id="next-btn-container">
+      <button onclick="nextQuestion()" id="btn-next">Next Question →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const JSON_URL = 'https://raw.githubusercontent.com/tenon-io/wcag-as-json/master/wcag.json';
+  const COOKIE_NAME = 'wcagTrainerState';
+  
+  let allCriteria = [];
+  let currentRoundQueue = [];
+  let nextRoundQueue = [];
+  let currentQuestionIndex = 0;
+  let roundNumber = 1;
+
+  // --- Cookie Utilities ---
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+  }
+
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  function eraseCookie(name) {
+    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+
+  // --- State Management ---
+  function saveState() {
+    const state = {
+      roundNumber: roundNumber,
+      currentQuestionIndex: currentQuestionIndex,
+      currentRoundIds: currentRoundQueue.map(c => c.id),
+      nextRoundIds: nextRoundQueue.map(c => c.id)
+    };
+    setCookie(COOKIE_NAME, JSON.stringify(state), 30);
+  }
+
+  function loadState() {
+    const stateStr = getCookie(COOKIE_NAME);
+    if (!stateStr) return false;
+
+    try {
+      const state = JSON.parse(stateStr);
+      roundNumber = state.roundNumber;
+      currentQuestionIndex = state.currentQuestionIndex;
+      
+      currentRoundQueue = state.currentRoundIds
+        .map(id => allCriteria.find(c => c.id === id))
+        .filter(Boolean);
+        
+      nextRoundQueue = state.nextRoundIds
+        .map(id => allCriteria.find(c => c.id === id))
+        .filter(Boolean);
+        
+      return true;
+    } catch (e) {
+      console.error("Failed to parse saved state", e);
+      return false;
+    }
+  }
+
+  // --- Game Initialization ---
+  async function initGame() {
+    try {
+      const response = await fetch(JSON_URL);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      
+      allCriteria = parseWCAGJSON(data);
+      if (allCriteria.length === 0) throw new Error('No criteria extracted');
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('game-area').style.display = 'block';
+      document.getElementById('reset-btn').style.display = 'block';
+      
+      if (loadState()) {
+        loadQuestion(); 
+      } else {
+        startGame(); 
+      }
+    } catch (error) {
+      console.error('Failed to load JSON:', error);
+      document.getElementById('loading').innerHTML = 
+        `<span style="color: #dc2626;">Error: Could not load the WCAG data from GitHub. Check your network or adblocker.</span>`;
+    }
+  }
+
+  function parseWCAGJSON(data) {
+    let results = [];
+    
+    function traverse(obj) {
+      if (Array.isArray(obj)) {
+        obj.forEach(traverse);
+      } else if (obj !== null && typeof obj === 'object') {
+        if (obj.ref_id && obj.title && obj.level && typeof obj.ref_id === 'string') {
+          if (obj.ref_id.split('.').length === 3) {
+            
+            // Extract description
+            let descText = "Description text not available.";
+            if (typeof obj.description === 'string') {
+                descText = obj.description;
+            } else if (obj.description && typeof obj.description.text === 'string') {
+                descText = obj.description.text;
+            }
+
+            // Append special cases as an HTML list if they exist
+            if (obj.special_cases && Array.isArray(obj.special_cases) && obj.special_cases.length > 0) {
+              let casesHtml = "<ul>";
+              obj.special_cases.forEach(sc => {
+                let scTitle = sc.title ? `<strong>${sc.title}:</strong> ` : "";
+                let scDesc = sc.description || "";
+                casesHtml += `<li>${scTitle}${scDesc}</li>`;
+              });
+              casesHtml += "</ul>";
+              descText += casesHtml;
+            }
+
+            results.push({
+              id: obj.ref_id,
+              title: obj.title,
+              level: obj.level,
+              description: descText,
+              url: obj.url || null
+            });
+            return;
+          }
         }
-        document.cookie =
-          name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
-      }
-
-      function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(";");
-        for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) === " ") c = c.substring(1, c.length);
-          if (c.indexOf(nameEQ) === 0)
-            return c.substring(nameEQ.length, c.length);
+        for (let key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            traverse(obj[key]);
+          }
         }
-        return null;
       }
+    }
+    
+    traverse(data);
+    return results;
+  }
 
-      function eraseCookie(name) {
-        document.cookie =
-          name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-      }
+  function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
 
-      // --- State Management ---
-      function saveState() {
-        const state = {
-          roundNumber: roundNumber,
-          currentQuestionIndex: currentQuestionIndex,
-          // Store IDs instead of full objects to keep cookie size small
-          currentRoundIds: currentRoundQueue.map((c) => c.id),
-          nextRoundIds: nextRoundQueue.map((c) => c.id),
+  function resetGame() {
+    if(confirm("Are you sure you want to reset your progress? This will wipe your saved game.")) {
+      eraseCookie(COOKIE_NAME);
+      startGame();
+    }
+  }
+
+  function startGame() {
+    currentRoundQueue = shuffle([...allCriteria]);
+    nextRoundQueue = [];
+    currentQuestionIndex = 0;
+    roundNumber = 1;
+    saveState();
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    if (currentQuestionIndex >= currentRoundQueue.length) {
+      if (nextRoundQueue.length === 0) {
+        document.getElementById('criterion-id').textContent = "🎉 Congratulations!";
+        document.getElementById('criterion-title').textContent = "You have mastered all WCAG Success Criteria!";
+        document.getElementById('options').style.display = "none";
+        document.getElementById('sc-description').style.display = "none";
+        document.getElementById('next-btn-container').style.display = "none";
+        document.getElementById('feedback').textContent = "";
+        
+        const btn = document.createElement('button');
+        btn.textContent = "Play Again";
+        btn.className = "level-btn";
+        btn.style.width = "100%";
+        btn.onclick = () => {
+            eraseCookie(COOKIE_NAME);
+            startGame();
         };
-        setCookie(COOKIE_NAME, JSON.stringify(state), 30); // Save for 30 days
-      }
-
-      function loadState() {
-        const stateStr = getCookie(COOKIE_NAME);
-        if (!stateStr) return false;
-
-        try {
-          const state = JSON.parse(stateStr);
-          roundNumber = state.roundNumber;
-          currentQuestionIndex = state.currentQuestionIndex;
-
-          // Reconstruct queues using the fetched master list
-          currentRoundQueue = state.currentRoundIds
-            .map((id) => allCriteria.find((c) => c.id === id))
-            .filter(Boolean);
-
-          nextRoundQueue = state.nextRoundIds
-            .map((id) => allCriteria.find((c) => c.id === id))
-            .filter(Boolean);
-
-          return true;
-        } catch (e) {
-          console.error("Failed to parse saved state", e);
-          return false;
-        }
-      }
-
-      // --- Game Initialization ---
-      async function initGame() {
-        try {
-          const response = await fetch(JSON_URL);
-          if (!response.ok) throw new Error("Network response was not ok");
-          const data = await response.json();
-
-          allCriteria = parseWCAGJSON(data);
-          if (allCriteria.length === 0)
-            throw new Error("No criteria extracted");
-
-          document.getElementById("loading").style.display = "none";
-          document.getElementById("game-area").style.display = "block";
-          document.getElementById("reset-btn").style.display = "block";
-
-          if (loadState()) {
-            loadQuestion(); // Resume from cookie
-          } else {
-            startGame(); // Fresh start
-          }
-        } catch (error) {
-          console.error("Failed to load JSON:", error);
-          document.getElementById("loading").innerHTML =
-            `<span style="color: #dc2626;">Error: Could not load the WCAG data from GitHub. Check your network or adblocker.</span>`;
-        }
-      }
-
-      function parseWCAGJSON(data) {
-        let results = [];
-
-        function traverse(obj) {
-          if (Array.isArray(obj)) {
-            obj.forEach(traverse);
-          } else if (obj !== null && typeof obj === "object") {
-            if (
-              obj.ref_id &&
-              obj.title &&
-              obj.level &&
-              typeof obj.ref_id === "string"
-            ) {
-              if (obj.ref_id.split(".").length === 3) {
-                let descText = "Description text not available.";
-                if (typeof obj.description === "string") {
-                  descText = obj.description;
-                } else if (
-                  obj.description &&
-                  typeof obj.description.text === "string"
-                ) {
-                  descText = obj.description.text;
-                }
-
-                results.push({
-                  id: obj.ref_id,
-                  title: obj.title,
-                  level: obj.level,
-                  description: descText,
-                });
-                return;
-              }
-            }
-            for (let key in obj) {
-              if (Object.prototype.hasOwnProperty.call(obj, key)) {
-                traverse(obj[key]);
-              }
-            }
-          }
-        }
-
-        traverse(data);
-        return results;
-      }
-
-      function shuffle(array) {
-        let currentIndex = array.length,
-          randomIndex;
-        while (currentIndex !== 0) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex],
-            array[currentIndex],
-          ];
-        }
-        return array;
-      }
-
-      function resetGame() {
-        if (
-          confirm(
-            "Are you sure you want to reset your progress? This will wipe your saved game.",
-          )
-        ) {
-          eraseCookie(COOKIE_NAME);
-          startGame();
-        }
-      }
-
-      function startGame() {
-        currentRoundQueue = shuffle([...allCriteria]);
+        document.getElementById('feedback').appendChild(btn);
+        eraseCookie(COOKIE_NAME);
+        return;
+      } else {
+        currentRoundQueue = shuffle([...nextRoundQueue]);
         nextRoundQueue = [];
         currentQuestionIndex = 0;
-        roundNumber = 1;
-        saveState();
-        loadQuestion();
+        roundNumber++;
       }
+    }
 
-      function loadQuestion() {
-        // Check if the current round is over
-        if (currentQuestionIndex >= currentRoundQueue.length) {
-          if (nextRoundQueue.length === 0) {
-            // Complete Victory
-            document.getElementById("criterion-id").textContent =
-              "🎉 Congratulations!";
-            document.getElementById("criterion-title").textContent =
-              "You have mastered all WCAG Success Criteria!";
-            document.getElementById("options").style.display = "none";
-            document.getElementById("sc-description").style.display = "none";
-            document.getElementById("next-btn-container").style.display =
-              "none";
-            document.getElementById("feedback").textContent = "";
+    document.getElementById('sc-description').style.display = "none";
+    document.getElementById('next-btn-container').style.display = "none";
+    document.getElementById('feedback').textContent = "";
+    document.getElementById('options').style.display = "flex";
+    toggleButtons(false);
+    
+    updateScoreboard();
 
-            const btn = document.createElement("button");
-            btn.textContent = "Play Again";
-            btn.className = "level-btn";
-            btn.style.width = "100%";
-            btn.onclick = () => {
-              eraseCookie(COOKIE_NAME);
-              startGame();
-            };
-            document.getElementById("feedback").appendChild(btn);
-            eraseCookie(COOKIE_NAME); // Clear save upon victory
-            return;
-          } else {
-            // Start next round with missed criteria
-            currentRoundQueue = shuffle([...nextRoundQueue]);
-            nextRoundQueue = [];
-            currentQuestionIndex = 0;
-            roundNumber++;
-          }
-        }
-
-        // Reset UI for the new question
-        document.getElementById("sc-description").style.display = "none";
-        document.getElementById("next-btn-container").style.display = "none";
-        document.getElementById("feedback").textContent = "";
-        document.getElementById("options").style.display = "flex";
-        toggleButtons(false);
-
-        updateScoreboard();
-
-        const current = currentRoundQueue[currentQuestionIndex];
-        document.getElementById("criterion-id").textContent =
-          `Criterion ${current.id}`;
-        document.getElementById("criterion-title").textContent = current.title;
-
-        saveState(); // Checkpoint state at the start of a new question
+    const current = currentRoundQueue[currentQuestionIndex];
+    document.getElementById('criterion-id').textContent = `Criterion ${current.id}`;
+    
+    // Convert title into a hyperlink if the URL exists
+    if (current.url) {
+      // Attempt to link directly to the Understanding document instead of the primary TR document
+      let linkUrl = current.url;
+      if (linkUrl.includes('/TR/WCAG') && linkUrl.includes('#')) {
+        const parts = linkUrl.split('#');
+        linkUrl = parts[0].replace('/TR/', '/WAI/') + 'Understanding/' + parts[1] + '.html';
       }
+      document.getElementById('criterion-title').innerHTML = `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" title="Read the Understanding Document">${current.title}</a>`;
+    } else {
+      document.getElementById('criterion-title').textContent = current.title;
+    }
+    
+    saveState();
+  }
 
-      function checkAnswer(selectedLevel) {
-        const current = currentRoundQueue[currentQuestionIndex];
-        const feedbackDiv = document.getElementById("feedback");
-        const descBox = document.getElementById("sc-description");
-
-        toggleButtons(true); // Lock buttons
-
-        // Highlight chosen answer logic
-        if (selectedLevel === current.level) {
-          feedbackDiv.textContent = "✅ Correct!";
-          feedbackDiv.className = "feedback correct";
-        } else {
-          feedbackDiv.textContent = `❌ Incorrect. Criterion ${current.id} is Level ${current.level}.`;
-          feedbackDiv.className = "feedback incorrect";
-
-          // Ensure we don't add duplicates if they somehow reload mid-answer
-          if (!nextRoundQueue.some((c) => c.id === current.id)) {
-            nextRoundQueue.push(current);
-          }
-        }
-
-        // Show the actual text of the SC
-        descBox.innerHTML = `<strong>Criterion Text:</strong><br/>${current.description}`;
-        descBox.style.display = "block";
-
-        document.getElementById("next-btn-container").style.display = "block";
-
-        updateScoreboard();
-        saveState(); // Save state so missed questions are tracked if they leave now
+  function checkAnswer(selectedLevel) {
+    const current = currentRoundQueue[currentQuestionIndex];
+    const feedbackDiv = document.getElementById('feedback');
+    const descBox = document.getElementById('sc-description');
+    
+    toggleButtons(true);
+    
+    if (selectedLevel === current.level) {
+      feedbackDiv.textContent = "✅ Correct!";
+      feedbackDiv.className = "feedback correct";
+    } else {
+      feedbackDiv.textContent = `❌ Incorrect. Criterion ${current.id} is Level ${current.level}.`;
+      feedbackDiv.className = "feedback incorrect";
+      
+      if (!nextRoundQueue.some(c => c.id === current.id)) {
+        nextRoundQueue.push(current);
       }
+    }
+    
+    descBox.innerHTML = `<strong>Criterion Text:</strong><br/>${current.description}`;
+    descBox.style.display = "block";
+    
+    document.getElementById('next-btn-container').style.display = "block";
+    
+    updateScoreboard();
+    saveState();
+  }
 
-      function nextQuestion() {
-        currentQuestionIndex++;
-        loadQuestion();
-      }
+  function nextQuestion() {
+    currentQuestionIndex++;
+    loadQuestion();
+  }
 
-      function toggleButtons(disabled) {
-        document.getElementById("btn-A").disabled = disabled;
-        document.getElementById("btn-AA").disabled = disabled;
-        document.getElementById("btn-AAA").disabled = disabled;
-      }
+  function toggleButtons(disabled) {
+    document.getElementById('btn-A').disabled = disabled;
+    document.getElementById('btn-AA').disabled = disabled;
+    document.getElementById('btn-AAA').disabled = disabled;
+  }
 
-      function updateScoreboard() {
-        document.getElementById("round-info").textContent =
-          `Round: ${roundNumber}`;
-        document.getElementById("question-count").textContent =
-          currentQuestionIndex + 1;
-        document.getElementById("total-count").textContent =
-          currentRoundQueue.length;
-        document.getElementById("missed-count").textContent =
-          nextRoundQueue.length;
-      }
+  function updateScoreboard() {
+    document.getElementById('round-info').textContent = `Round: ${roundNumber}`;
+    document.getElementById('question-count').textContent = currentQuestionIndex + 1;
+    document.getElementById('total-count').textContent = currentRoundQueue.length;
+    document.getElementById('missed-count').textContent = nextRoundQueue.length;
+  }
 
-      // Start the engine
-      initGame();
-    </script>
-  </body>
+  // Start the engine
+  initGame();
+</script>
+</body>
 </html>
