@@ -13,6 +13,7 @@ export const ui = {
     "nav.education": "Film Education",
     "nav.programs": "Film Programs",
     "nav.blog": "Blog",
+    "nav.books": "Books",
     "nav.contact": "Contact",
   },
   de: {
@@ -22,6 +23,7 @@ export const ui = {
     "nav.education": "Filmvermittlung",
     "nav.programs": "Filmprogramme",
     "nav.blog": "Blog",
+    "nav.books": "Bücher",
     "nav.contact": "Kontakt",
   },
 } as const;

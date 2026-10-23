@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatFinishedDate, getFinishedBooks } from "../lib/bookhive";
+
+export const frontmatter = {
+  title: "Bücher",
+  lang: "de",
+};
+
+const books = await getFinishedBooks();
+---
+
+<BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
+  <ul>
+    {
+      books.map((book) => (
+        <li>
+          {book.authors}: {book.title}
+          {book.finishedAt && (
+            <> (<time datetime={book.finishedAt}>{formatFinishedDate(book.finishedAt)}</time>)</>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
