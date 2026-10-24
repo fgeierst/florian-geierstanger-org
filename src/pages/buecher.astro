@@ -8,19 +8,35 @@ export const frontmatter = {
 };
 
 const books = await getFinishedBooks();
+const yearFormatter = new Intl.DateTimeFormat("de-DE", {
+  year: "numeric",
+  timeZone: "Europe/Berlin",
+});
+const booksByYear = new Map<string, typeof books>();
+for (const book of books) {
+  const year = book.finishedAt ? yearFormatter.format(new Date(book.finishedAt)) : "Ohne Datum";
+  const group = booksByYear.get(year) ?? [];
+  group.push(book);
+  booksByYear.set(year, group);
+}
 ---
 
 <BaseLayout title={frontmatter.title} lang={frontmatter.lang}>
-  <ul>
-    {
-      books.map((book) => (
-        <li>
-          {book.authors}: {book.title}
-          {book.finishedAt && (
-            <> (<time datetime={book.finishedAt}>{formatFinishedDate(book.finishedAt)}</time>)</>
-          )}
-        </li>
-      ))
-    }
-  </ul>
+  {
+    Array.from(booksByYear, ([year, yearBooks]) => (
+      <>
+        <h2>{year} ({yearBooks.length})</h2>
+        <ul>
+          {yearBooks.map((book) => (
+            <li>
+              {book.authors}: {book.title}
+              {book.finishedAt && (
+                <> (<time datetime={book.finishedAt}>{formatFinishedDate(book.finishedAt)}</time>)</>
+              )}
+            </li>
+          ))}
+        </ul>
+      </>
+    ))
+  }
 </BaseLayout>
